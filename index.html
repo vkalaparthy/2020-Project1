@@ -2,10 +2,64 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/style.css">
+
+
     <title>api query Content!</title>
     </head>
     <body>
         <!--  Added this to display all dog breed name and breed-type from that API -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Dream Dog</h1>
+            </div>
+          </div>
+
+          <form>
+            <select name="Breed Group">
+                <option value="sporting" selected>Sporting Group</option>
+                <option value="working">Working Group</option>
+                <option value="hound">Hound Group</option>
+                <option value="terrier">Terrier Group</option>
+                <option value="toy">Toy Group</option>
+                <option value="non-sporting">Non-Sporting Group</option>
+                <option value="herding">Herding Group</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <select name="Size">
+                <option value="xs-size">Extra Small</option>
+                <option value="small-size" selected>Small</option>
+                <option value="medium-size">Medium</option>
+                <option value="large-size">Large</option>
+                <option value="xl-size">Extra Large</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <select name="Temperament">
+                <option value="other-dogs" selected>Good with Other Dogs</option>
+                <option value="kids">Good with Kids</option>
+                <option value="cats">Good with Cats</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <select name="Lifespan">
+                <option value="short-span" selected>5-8 Years</option>
+                <option value="medium-span">9-12 Years</option>
+                <option value="long-span">13+ Years</option>
+            </select>
+        </form>
+
+        <div class="footer bg-dark">
+            <div class="container">
+                  
+            </div>
+        </div>
+
         <div container class="main"></div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script>
@@ -44,5 +98,7 @@
             //     console.log(response);
             // })
         </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     </body>
 </html>
