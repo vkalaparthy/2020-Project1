@@ -1,4 +1,3 @@
-
 var dogIdArray = [];
 $("#search-button").on("click", function() {
 
