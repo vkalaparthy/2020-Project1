@@ -19,21 +19,23 @@
           <form>
             <h7>Breed Group</h7>
             <br>
-            <select name="Breed Group">
-                <option value="sporting" selected>Sporting Group</option>
-                <option value="working">Working Group</option>
-                <option value="hound">Hound Group</option>
-                <option value="terrier">Terrier Group</option>
-                <option value="toy">Toy Group</option>
-                <option value="non-sporting">Non-Sporting Group</option>
-                <option value="herding">Herding Group</option>
+            <label for="searchType">Breed Type</label>
+                <select class="form-control" id="searchType">
+                <option value="sporting" selected>Sporting</option>
+                <option value="working">Working</option>
+                <option value="hound">Hound</option>
+                <option value="terrier">Terrier</option>
+                <option value="toy">Toy</option>
+                <option value="non-sporting">Non-Sporting</option>
+                <option value="herding">Herding</option>
             </select>
         </form>
         <br>
         <form>
             <h7>Size</h7>
             <br>
-            <select name="Size">
+            <label for="searchType">Size</label>
+                <select class="form-control" id="searchType">
                 <option value="xs-size">Extra Small</option>
                 <option value="small-size" selected>Small</option>
                 <option value="medium-size">Medium</option>
@@ -45,7 +47,8 @@
         <form>
             <h7>Temperament</h7>
             <br>
-            <select name="Temperament">
+            <label for="searchType">Temperament</label>
+                <select class="form-control" id="searchType">
                 <option value="other-dogs" selected>Good with Other Dogs</option>
                 <option value="kids">Good with Kids</option>
                 <option value="cats">Good with Cats</option>
@@ -55,7 +58,8 @@
         <form>
             <h7>Lifespan</h7>
             <br>
-            <select name="Lifespan">
+            <label for="searchType">Lifespan</label>
+                <select class="form-control" id="searchType">
                 <option value="short-span" selected>5-8 Years</option>
                 <option value="medium-span">9-12 Years</option>
                 <option value="long-span">13+ Years</option>
@@ -70,7 +74,7 @@
 
         <br>
 
-        <button type="button" class="btn btn-submit">Submit</button>
+        <button type="button" class="btn btn-submit" id="search-button">Submit</button>
 
         <button type="button" class="btn btn-clear">Clear</button>
 
