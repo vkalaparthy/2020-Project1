@@ -7,6 +7,7 @@
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 
+
     <title>api query Content!</title>
     </head>
     <body>
@@ -78,44 +79,11 @@
         <button type="button" class="btn btn-surprise">Surprise Me :)</button>
 
         <div container class="main"></div>
+        
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script>
-            $.ajax({
-                url: "https://api.thedogapi.com/v1/breeds",
-                method: "GET"
-            }). then (function(breedData){
-              for(var i = 0; i<breedData.length; i++) {
-                $(".main").append("<p>" + "ID: " + breedData[i].id + ",  Name: " + breedData[i].name + ",  Group: " + breedData[i].breed_group + "</p>");
-              }
-            });
-
-            // $.ajax({
-            //     url: 'https://api.petfinder.com/v2/animals?type=dog&page=2',
-            //     headers: { 'Authorization': 'Bearer XYtig7eQicL760dm4x2GjsLvhzshCZ8AsETvbxlb'}
-            // }). then (function(response) {
-            //     console.log(response);
-            // });
-
-
-
-            //"Authorization: Bearer XYtig7eQicL760dm4x2GjsLvhzshCZ8AsETvbxlb" https://api.petfinder.com/v2/animals?type=dog
-
-            // import icajax from 'ic-ajax';
-            // icajax({
-            // url: 'https://api.petfinder.com/v2/animals?type=dog&page=2',
-            // headers: {'Authorization': "RbjkyobxNXfD4Ey5eFqF3pAFvWYqccdWbf1QG5heK4KqDJiYmW"}
-            // }). then (function(response) {
-            //     console.log(response)
-            // });
-            // $.ajax({
-            //     url: "https://api.petfinder.com/schemas/0.9/petfinder.js",
-            //     method: "GET",
-            //     dataType: "json"
-            // }). then (function(response) {
-            //     console.log(response);
-            // })
-        </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+
     </body>
 </html>
