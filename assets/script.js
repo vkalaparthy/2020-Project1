@@ -7,7 +7,7 @@ $("#search-button").on("click", function() {
     }).done ( function(breedData) {
 
             $("#dogInfo").empty();
-            var breedType = $("#searchType").val();
+            var breedType = $("#breedGroup").val();
             var temperment = $("#searchTemperament").val();
             console.log(breedType);
             for(var i = 0; i<breedData.length; i++) {
