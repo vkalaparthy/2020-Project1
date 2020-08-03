@@ -1,106 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/style.css">
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <head>
+    <meta charset="UTF-8">
+    <meta nname=viewport content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 
 
-<title>api query Content!</title>
-</head>
-<body>
-<!--  Added this to display all dog breed name and breed-type from that API -->
-<div class="jumbotron jumbotron-fluid">
-<div class="container">
-<h1 class="display-4"><i class='fas fa-dog' style='font-size:48px;color:black'></i> Dream Dog</h1>
-</div>
-</div>
+    <title>api query Content!</title>
+    </head>
 
-<form>
+    <body>
+    <!--  Added this to display all dog breed name and breed-type from that API -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><i class='fas fa-dog' style='font-size:48px;color:black'></i> Dream Dog</h1>
+            </div>
+        </div>
 
-<label for="searchType">Breed Type</label>
-    <select class="form-control" id="searchType">
-        <option>Sporting</option>
-        <option>Working</option>
-        <option>Hound</option>
-        <option>Terrier</option>
-        <option>Toy</option>
-        <option>Non-Sporting</option>
-        <option>Herding</option>
-    </select>
-<!--/form>
-<br>
-<<form>
+        <!-- Container to hold all page content -->
+        <div class="content">
+            <!-- To make sure the content takes the entire width of the page -->
+            <div class="container-fluid">
+                
+                <form>
 
-<label for="searchSize">Size</label>
-    <select class="form-control" id="searchSize">
-    <option value="xs-size">Extra Small</option>
-    <option value="small-size" selected>Small</option>
-    <option value="medium-size">Medium</option>
-    <option value="large-size">Large</option>
-    <option value="xl-size">Extra Large</option>
-</select>
-</form>
-<br>
-<form>-->
+                    <label for="searchType">Breed Type</label>
+                        <select class="form-control" id="searchType">
+                            <option>Sporting</option>
+                            <option>Working</option>
+                            <option>Hound</option>
+                            <option>Terrier</option>
+                            <option>Toy</option>
+                            <option>Non-Sporting</option>
+                            <option>Herding</option>
+                        </select>
+                    <!--/form>
+                    <br>
+                    <<form>
 
-<label for="searchTemperament">Temperament</label>
-    <select class="form-control" id="searchTemperament">
-    <option>Happy</option>
-    <option>Intelligent</option>
-    <option>Playful</option>
-    <option>Friendly</option>
-    <option value="Gentle">Good with children</option>
-    <option>Energetic</option>
-</select>
-</form>
-<br>
-<!-- <form>
+                    <label for="searchSize">Size</label>
+                        <select class="form-control" id="searchSize">
+                        <option value="xs-size">Extra Small</option>
+                        <option value="small-size" selected>Small</option>
+                        <option value="medium-size">Medium</option>
+                        <option value="large-size">Large</option>
+                        <option value="xl-size">Extra Large</option>
+                    </select>
+                    </form>
+                    <br>
+                    <form>-->
 
-<label for="searchLifespan">Lifespan</label>
-    <select class="form-control" id="searchLifespan">
-    <option value="short-span" selected>5-8 Years</option>
-    <option value="medium-span">9-12 Years</option>
-    <option value="long-span">13+ Years</option>
-</select>
-</form> -->
+                    <label for="searchTemperament">Temperament</label>
+                        <select class="form-control" id="searchTemperament">
+                        <option>Happy</option>
+                        <option>Intelligent</option>
+                        <option>Playful</option>
+                        <option>Friendly</option>
+                        <option value="Gentle">Good with children</option>
+                        <option>Energetic</option>
+                    </select>
+                </form>
+                
+                <br>
+                <!-- <form>
 
-<!-- <div class="footer bg-dark"> -->
-<div class="container">
-    
-</div>
-</div>
+                <label for="searchLifespan">Lifespan</label>
+                    <select class="form-control" id="searchLifespan">
+                    <option value="short-span" selected>5-8 Years</option>
+                    <option value="medium-span">9-12 Years</option>
+                    <option value="long-span">13+ Years</option>
+                </select>
+                </form> -->
 
-<br>
+                <!-- <div class="footer bg-dark"> -->
+                <div class="container"></div>
+                
 
-<button type="button" class="btn btn-submit" id="search-button">Submit</button>
+                <br>
 
-<!-- <button type="button" class="btn btn-clear">Clear</button>
+                <button type="button" class="btn btn-submit" id="search-button">Submit</button>
 
-<button type="button" class="btn btn-surprise">Surprise Me :)</button> -->
+                <!-- <button type="button" class="btn btn-clear">Clear</button>
 
-<div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div>
-<!-- <div container class="main" id="mainDiv"></div> -->
+                <button type="button" class="btn btn-surprise">Surprise Me :)</button> -->
 
-<div class="container-fluid" id="displayFromPetFinder">
-    <div class="card">
-      <div class="card-header">
-        <h5><i class='fas fa-dog' style='font-size:36px;color:black'></i>Top Search Results</i></h5>
-      </div>
-      <div class="card-body" id="dogList">
+                <div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div>
+                <!-- <div container class="main" id="mainDiv"></div> -->
 
-      </div>
-  </div>
+                <div class="container-fluid" id="displayFromPetFinder">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class='fas fa-dog' style='font-size:36px;color:black'></i>Top Search Results</i></h5>
+                        </div>
+                        <div class="card-body" id="dogList"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
 
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <div class="footer">
+            <div class="text-center bg-dark fixed-bottom">Happy Dog Days Inc</div>
+        </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-<script src="assets/script.js"></script>
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 
-</body>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <script src="assets/script.js"></script>
+
+    </body>
 </html>

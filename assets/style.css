@@ -1,19 +1,42 @@
+body {
+    overflow: none;
+}
+
 .jumbotron {
     text-align: center;
 }
 
 .footer {
-    position: fixed;
+    right: 0;
     left: 0;
-    bottom: 0;
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    color: white;
+    bottom: 0 !important;
+    height: 40px !important;
+    padding: 10px !important;
+    color: #fff;
+}
+
+.content {
+    position: absolute !important;
+    top: 205px;
+    left: 0;
+    right: 0;
+    bottom: 41px;
+    padding: 5px;
+    height: calc(100vh - 230px);
+    overflow: auto;
+}
+
+.card {
+    margin: 15px 0 15px 0;
 }
 
 .btn {
     background-color: gray;
     color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .card-img-top {
+        width: 10px;
+    }
 }
