@@ -4,6 +4,14 @@ body {
 
 .jumbotron {
     text-align: center;
+    background-image: url("../assets/images/paw-prints.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+p {
+    margin-top: 20px;
 }
 
 .footer {
@@ -31,7 +39,7 @@ body {
 }
 
 .btn {
-    background-color: gray;
+    background-color:black;
     color: white;
 }
 
