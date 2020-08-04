@@ -84,7 +84,7 @@ function addDogInfoToDiv (dogData) {
     newh5.text(dogData.name);
     newCardBody.append(newh5);
     var newP1 = $("<p>");
-    newP1.addClass("card-text").append( "ID: " + dogData.id + ",  Group: " + dogData.breed_group + " Life span: " + dogData.life_span);
+    newP1.addClass("card-text").append( " Group: " + dogData.breed_group + "<br>" + "<br>" + " Life span: " + dogData.life_span);
     newCardBody.append(newP1);
     var newP2 = $("<p>").addClass("card-text");
     newP2.append(tempData);
