@@ -87,7 +87,7 @@
                     
                     <label for="searchType">Breed Type</label>
                         <input type="text" class="form-control" placeholder="Golden Retreiver, Dalmatian, Labrador, etc." id="searchType"></input>
-                        <small class="form-text text-muted">If you want one specific breed, ignore other search criteria</small>
+                        <small class="form-text text-danger">If you enter a Breed Type, this will be the only option we search for!</small>
                     
                     <br>
                     
@@ -132,40 +132,41 @@
                         </select>
                 </form>
                 
-                <!-- <form>
-
-                <label for="searchLifespan">Lifespan</label>
-                    <select class="form-control" id="searchLifespan">
-                    <option value="short-span" selected>5-8 Years</option>
-                    <option value="medium-span">9-12 Years</option>
-                    <option value="long-span">13+ Years</option>
-                </select>
-                </form> -->
-
-                <!-- <div class="footer bg-dark"> -->
-                <div class="container"></div>
-                
 
                 <br>
 
-                <button type="button" class="btn btn-submit" id="search-button">Submit</button>
+                <a href="#row-dogInfo"><button class="btn btn-primary" id="search-button">Submit</button></a>
 
-                <!-- <button type="button" class="btn btn-clear">Clear</button>
+                <button type="button" class="btn btn-clear" id="clear-button">Clear</button>
 
-                <button type="button" class="btn btn-surprise">Surprise Me :)</button> -->
+                <a href="#row-available-dogList"><button class="btn btn-primary" id="surpriseMe-button"><i class="fa fa-smile" style="font-size: 24px; color:white">Surprise Me</i></button></a>
 
                 <div class="row" id="row-dogInfo">
                     <div class="col-lg-12">
                       <!-- Display results for the above input -->
                       <div class="card">
-                      <div class="card-header">
-                          <h5><i class='fas fa-paw' style='font-size:36px;color:black'></i> Top Search Results</i></h5>
+                        <div class="card-header">
+                            <h5><i class='fas fa-paw' style='font-size:36px;color:black'></i> Top Search Results</i></h5>
+                        </div>
+                    
+                        <div class="card-body" id="dogList">
+                            <div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div>
+                        </div>
                       </div>
-                  
-                      <div class="card-body" id="dogList">
-                          <div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div>
-                      </div>
-                      </div>
+                    </div>
+                </div>
+
+                <div class="row" id="row-available-dogList">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-dog" style="font-size: 36px; color: black">Available Dogs</i> </h5>
+                            </div>
+
+                            <div class="card-body" id="available-dogList">
+                                <!-- <div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
