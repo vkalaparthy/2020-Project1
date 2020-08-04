@@ -32,7 +32,7 @@ $("#search-button").on("click", function() {
                         addDogInfoToDiv(dogData[i]);
                       }
                     }
-                } 
+                } dI
             }
             for (var i=0; i<dogIdArray.length; i++) {
                 addTheImage(dogIdArray[i]);
@@ -157,8 +157,10 @@ function getPetFinderToken(breed, searchState) {
             var newCard = $("<div>").addClass("card");
             var newCardBody = $("<div>").addClass("card-body");
             var dImg = $("<img>");
-            dImg.attr("src", response.animals[n].photos[0].small);
-            newCardBody.append(dImg);
+            if (response.animals[n].photos.length > 0) {
+              dImg.attr("src", response.animals[n].photos[0].small);
+              newCardBody.append(dImg);
+            }
             newCardBody.append("<p> Primary: " + response.animals[n].breeds.primary + "</p>");
             if (response.animals[n].breeds.secondary != null) 
                 newCardBody.append("<p> Secondary: " + response.animals[n].breeds.secondary + "</p>");
