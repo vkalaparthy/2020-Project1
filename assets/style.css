@@ -2,16 +2,17 @@ body {
     overflow: none;
 }
 
-.jumbotron {
-    text-align: center;
-    background-image: url("../assets/images/paw-prints.jpg");
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 56px;
+  z-index: 1;
 }
 
-p {
-    margin-top: 20px;
+a {
+    color: white !important;
 }
 
 .footer {
