@@ -56,7 +56,6 @@ function addTheImage(dogId) {
             var dogImg = $("<img>");
             //dogImg.css({'display': 'block', 'width': '1005'});
             //dogImg.css({'max-width': 'fit-content', 'margin-left': 'auto', 'margin-right':'auto'});
-            dogImg.css({'width':'100%', 'height':'20vw', 'object-fit':'cover', 'margin-left': 'auto', 'margin-right':'auto'});
             dogImg.addClass("card-img-top");
             dogImg.attr("src", imgData[0].url);
             var getId = "#id-" + dogId;
