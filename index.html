@@ -92,7 +92,7 @@
                     <br>
                     
                     <label for="searchGroup">Breed Group</label>
-                        <select class="form-control" id="breedGroup">
+                        <select class="form-control" id="searchGroup">
                             <option></option>
                             <option>Sporting</option>
                             <option>Working</option>
@@ -154,15 +154,18 @@
 
                 <button type="button" class="btn btn-surprise">Surprise Me :)</button> -->
 
-                <div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div>
-                <!-- <div container class="main" id="mainDiv"></div> -->
-
-                <div class="container-fluid" id="displayFromPetFinder">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5><i class='fas fa-dog' style='font-size:36px;color:black'></i>Top Search Results</i></h5>
-                        </div>
-                        <div class="card-body" id="dogList"></div>
+                <div class="row" id="row-dogInfo">
+                    <div class="col-lg-12">
+                      <!-- Display results for the above input -->
+                      <div class="card">
+                      <div class="card-header">
+                          <h5><i class='fas fa-paw' style='font-size:36px;color:black'></i> Top Search Results</i></h5>
+                      </div>
+                  
+                      <div class="card-body" id="dogList">
+                          <div class="row row-cols-1 row-cols-md-3" id="dogInfo"></div>
+                      </div>
+                      </div>
                     </div>
                 </div>
                 
