@@ -1,50 +1,38 @@
 var dogIdArray = [];
+var searchSt = "";
+
 $("#search-button").on("click", function() {
+
+    console.log("Button-clicked");
+    $("#dogInfo").empty();
+    searchSt = $("#searchState").val();
+    console.log(searchSt);
+
+    event.preventDefault();  //This is commented as it blocks the href -- need to findout why?
 
     $.ajax({
         url: "https://api.thedogapi.com/v1/breeds", 
         method: "GET",
-    }).done ( function(breedData) {
-
-            $("#dogInfo").empty();
-            var breedType = $("#breedGroup").val();
+    }).done ( function(dogData) {
+            var breedGroup = $("#searchGroup").val();
             var temperment = $("#searchTemperament").val();
-            console.log(breedType);
-            for(var i = 0; i<breedData.length; i++) {
-                console.log(breedData[i].life_span);
-                var tempData = breedData[i].temperament;
-                if (tempData !== undefined) {
-                    console.log(tempData);
-                    if ((breedType === breedData[i].breed_group) && (tempData.indexOf(temperment) >= 0) ) {
-
-                        var newCol = $("<div>");
-                        newCol.addClass("col mb-4");
-                        $("#dogInfo").append(newCol);
-                        var newCard = $("<div>");
-                        var dogId = breedData[i].id;
-                        newCard.addClass("card");
-                        newCard.attr("id", "id-"+dogId);
-                        newCol.append(newCard);
-                        
-                        var newCardBody = $("<div>");
-                        newCardBody.addClass("card-body");
-                        var newh5 = $("<h5>");
-                        newh5.css({'text-align':'center'});
-                        newh5.text(breedData[i].name);
-                        newCardBody.append(newh5);
-                        var newP1 = $("<p>");
-                        newP1.css({'text-align': "center"});
-                        newP1.addClass("card-text").append( "ID: " + breedData[i].id + ",  Group: " + breedData[i].breed_group + " Life span: " + breedData[i].life_span);
-                        newCardBody.append(newP1);
-                        var newP2 = $("<p>").addClass("card-text");
-                        newP2.css({'text-align': "center"});
-                        newP2.append(tempData);
-                        newCardBody.append(newP2);
-                        newCardBody.append("<button class='btn btn-primary'>Select</button>" );   //<a href="#" class="btn btn-primary">Go somewhere</a>)
-                        newCard.append(newCardBody);
-                        dogIdArray.push(breedData[i].id);
+            var breedType = $("#searchType").val();
+            console.log($("#searchType").val());
+            console.log(breedGroup, dogData.length);
+            for(var i = 0; i<dogData.length; i++) {
+              var tempData = dogData[i].temperament;
+              if (breedType) {
+                if (breedType === dogData[i].name) {
+                    addDogInfoToDiv(dogData[i]);
+                } 
+              }else {
+                    if (tempData !== undefined) {
+                    //console.log(tempData);
+                      if ((breedGroup === dogData[i].breed_group) && (tempData.indexOf(temperment) >= 0) ) {
+                        addDogInfoToDiv(dogData[i]);
+                      }
                     }
-                }
+                } 
             }
             for (var i=0; i<dogIdArray.length; i++) {
                 addTheImage(dogIdArray[i]);
@@ -62,13 +50,13 @@ function addTheImage(dogId) {
             method:"GET"
         }). then (function(imgData) {
 
-            console.log(queryUrl);
+            console.log("addTheImage" + queryUrl);
             console.log(dogId);
             
             var dogImg = $("<img>");
             //dogImg.css({'display': 'block', 'width': '1005'});
             //dogImg.css({'max-width': 'fit-content', 'margin-left': 'auto', 'margin-right':'auto'});
-            dogImg.css({'width':'350px', 'height':'250px', 'margin-left': 'auto', 'margin-right':'auto'});
+            dogImg.css({'width':'100%', 'height':'20vw', 'object-fit':'cover', 'margin-left': 'auto', 'margin-right':'auto'});
             dogImg.addClass("card-img-top");
             dogImg.attr("src", imgData[0].url);
             var getId = "#id-" + dogId;
@@ -79,6 +67,45 @@ function addTheImage(dogId) {
         })
 
 }
+
+function addDogInfoToDiv (dogData) {
+    var tempData = dogData.temperament;
+    var newCol = $("<div>");
+    newCol.addClass("col mb-4");
+    $("#dogInfo").append(newCol);
+    var newCard = $("<div>");
+    var dogId = dogData.id;
+    newCard.addClass("card");
+    newCard.attr("id", "id-"+dogId);
+    newCol.append(newCard);
+    
+    var newCardBody = $("<div>");
+    newCardBody.addClass("card-body");
+    var newh5 = $("<h5>");
+    newh5.text(dogData.name);
+    newCardBody.append(newh5);
+    var newP1 = $("<p>");
+    newP1.addClass("card-text").append( "ID: " + dogData.id + ",  Group: " + dogData.breed_group + " Life span: " + dogData.life_span);
+    newCardBody.append(newP1);
+    var newP2 = $("<p>").addClass("card-text");
+    newP2.append(tempData);
+    newCardBody.append(newP2);
+    //newCardBody.append("<button type='button' id='pick-me' data-breed-name='" + breedData[i].name + "' class='btn btn-primary'>Select Me</button>" );   //<a href="#" class="btn btn-primary">Go somewhere</a>)
+    //newCardBody.append("<button id='pickMe' data-value='" + breedData[i].name + "' class='btn btn-primary'>Select Me</button>" );
+    newCardBody.append("<a href='#available-dogList' class='btn btn-primary' id='pick-me' data-breed-name='" + dogData.name +"' >Select Me</a>");
+    newCard.append(newCardBody);
+    dogIdArray.push(dogData.id);
+}
+
+$("#clear-button").on("click", function() {
+    $("#dogInfo").empty();
+    $("#available-dogList").empty();
+})
+
+$("#surpiseMe-button").on("click", function() {
+
+    console.log("Surprise Me .....");
+})
 
 function getPetFinderToken(breed, location) {
     var settings = {
@@ -112,26 +139,34 @@ function getPetFinderToken(breed, location) {
     }
   
     $.ajax(settings).done(function (response) {
-      //console.log(response);
+      console.log(queryURL);
+      console.log(response);
+      console.log("******************");
+      $("#available-dogList").empty();
+      if (response.animals.length === 0) {
+        $("#available-dogList").append("<h5> Sorry " + breedType + " is not avilable </h5>");
+        return;
+      };
+
       for (var n=0; n<response.animals.length; n++) {
           //console.log("*******" + n);
           console.log(response.animals[n]);
           var state = response.animals[n].organization_id;
           //console.log(state);
-          if (state.indexOf("NC") >= 0 ) {
+          if (state.indexOf("NJ") >= 0 ) {
             console.log("*******" + n);
             var newCard = $("<div>").addClass("card");
             var newCardBody = $("<div>").addClass("card-body");
             var dImg = $("<img>");
             dImg.attr("src", response.animals[n].photos[0].small);
             newCardBody.append(dImg);
-            newCardBody.append("<p>" + response.animals[n].breeds.primary + "</p>");
+            newCardBody.append("<p> Primary: " + response.animals[n].breeds.primary + "</p>");
             if (response.animals[n].breeds.secondary != null) 
-                newCardBody.append("<p>" + response.animals[n].breeds.secondary + "</p>");
+                newCardBody.append("<p> Secondary: " + response.animals[n].breeds.secondary + "</p>");
             newCardBody.append("<a href='" + response.animals[n].url + "' target='_blank'>" + response.animals[n].url + "</a>");
             newCard.append(newCardBody);
-            $("#dogList").append(newCard);
-            $("#mainDiv").append("<p>" + "*************************" + "</p>");
+            $("#available-dogList").append(newCard);
+            //$("#mainDiv").append("<p>" + "*************************" + "</p>");
             console.log(response.animals[n]);
             console.log(state);
             console.log(response.animals[n].breeds.primary);
@@ -143,32 +178,18 @@ function getPetFinderToken(breed, location) {
     });
   }
   
-  getPetFinderToken("Terrier", "nc")
+  // $("#dogInfo").on("click",  "#pick-me", function() {
+  //   console.log("pick me clicked");
+  //   console.log(event);
+  //   var button = $(event.target); 
+  //   console.log(button);
+  //   console.log(button.attr("id"));
+  //   //console.log(button.attr("data-breed-name"));
+  //   var breedType = button.attr("data-breed-name");
+  //   console.log(breedType);
+  //   //event.preventDefault();
+  //   //console.log (this.data(value));
+  //   getPetFinderToken(breedType, searchSt);
+  //   //windows.location.replace("finalResults.html");
 
-
-
-        // $.ajax({
-        //     url: 'https://api.petfinder.com/v2/animals?type=dog&page=2',
-        //     headers: { 'Authorization': 'Bearer XYtig7eQicL760dm4x2GjsLvhzshCZ8AsETvbxlb'}
-        // }). then (function(response) {
-        //     console.log(response);
-        // });
-
-
-
-        //"Authorization: Bearer XYtig7eQicL760dm4x2GjsLvhzshCZ8AsETvbxlb" https://api.petfinder.com/v2/animals?type=dog
-
-        // import icajax from 'ic-ajax';
-        // icajax({
-        // url: 'https://api.petfinder.com/v2/animals?type=dog&page=2',
-        // headers: {'Authorization': "RbjkyobxNXfD4Ey5eFqF3pAFvWYqccdWbf1QG5heK4KqDJiYmW"}
-        // }). then (function(response) {
-        //     console.log(response)
-        // });
-        // $.ajax({
-        //     url: "https://api.petfinder.com/schemas/0.9/petfinder.js",
-        //     method: "GET",
-        //     dataType: "json"
-        // }). then (function(response) {
-        //     console.log(response);
-        // })
+  // });
