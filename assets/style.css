@@ -43,8 +43,17 @@ p {
     color: white;
 }
 
-@media only screen and (max-width: 700px) {
+.card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
     .card-img-top {
-        width: 10px;
+        width: 100%;
+        height: auto;
     }
 }
