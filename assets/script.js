@@ -106,7 +106,7 @@ $("#surpiseMe-button").on("click", function() {
     console.log("Surprise Me .....");
 })
 
-function getPetFinderToken(breed, location) {
+function getPetFinderToken(breed, searchState) {
     var settings = {
       "async": true,
       "crossDomain": true,
@@ -121,12 +121,12 @@ function getPetFinderToken(breed, location) {
   
     $.ajax(settings).done(function (response) {
       console.log(response);
-      fetchPetFinderData(response.access_token, breed, location)
+      fetchPetFinderData(response.access_token, breed, searchState)
     });
   }
   
-  function fetchPetFinderData(token, breedType, location) {
-    var queryURL = "https://api.petfinder.com/v2/animals?type=dog&breed=" + breedType +"&location=" + location + "&page=2";
+  function fetchPetFinderData(token, breedType, searchState) {
+    var queryURL = "https://api.petfinder.com/v2/animals?type=dog&breed=" + breedType +"&location=" + searchState + "&page=2";
     var settings = {
       "async": true,
       "crossDomain": true,
@@ -177,18 +177,18 @@ function getPetFinderToken(breed, location) {
     });
   }
   
-  // $("#dogInfo").on("click",  "#pick-me", function() {
-  //   console.log("pick me clicked");
-  //   console.log(event);
-  //   var button = $(event.target); 
-  //   console.log(button);
-  //   console.log(button.attr("id"));
-  //   //console.log(button.attr("data-breed-name"));
-  //   var breedType = button.attr("data-breed-name");
-  //   console.log(breedType);
-  //   //event.preventDefault();
-  //   //console.log (this.data(value));
-  //   getPetFinderToken(breedType, searchSt);
-  //   //windows.location.replace("finalResults.html");
+  $("#dogInfo").on("click",  "#pick-me", function() {
+    console.log("pick me clicked");
+    console.log(event);
+    var button = $(event.target); 
+    console.log(button);
+    console.log(button.attr("id"));
+    //console.log(button.attr("data-breed-name"));
+    var breedType = button.attr("data-breed-name");
+    console.log(breedType);
+    //event.preventDefault();
+    //console.log (this.data(value));
+    getPetFinderToken(breedType, searchSt);
+    //windows.location.replace("finalResults.html");
 
-  // });
+  });
