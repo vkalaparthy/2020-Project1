@@ -15,6 +15,10 @@ a {
     color: white !important;
 }
 
+label {
+    font-weight: bold;
+}
+
 .footer {
     right: 0;
     left: 0;
@@ -42,6 +46,8 @@ a {
 .btn {
     background-color:black;
     color: white;
+    border-color: black;
+    font-size: 18px !important;
 }
 
 .card-img-top {
