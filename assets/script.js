@@ -108,9 +108,10 @@ $("#surpriseMe-button").on("click", function() {
   console.log("Surprise!");
   $("#dogInfo").empty();
   searchSt = $("#searchState").val();
+  stateName = $("#searchState option:selected").text();
   console.log(searchSt);
 
-  // event.preventDefault();  //This is commented as it blocks the href -- need to findout why?
+  event.preventDefault();  //This is commented as it blocks the href -- need to findout why?
 
   $.ajax({
       url: "https://api.thedogapi.com/v1/breeds", 
@@ -121,7 +122,8 @@ $("#surpriseMe-button").on("click", function() {
     var num = Math.floor(Math.random() * breedDataLength);
      console.log(num);
      addDogInfoToDiv(randomDog[num]);
-     for (var i = 0; i<randomDog.length; i++) {
+     console.log(dogIdArray)
+     for (var i = 0; i<dogIdArray.length; i++) {
       addTheImage(dogIdArray[i]); 
   } 
    })
