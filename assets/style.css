@@ -60,6 +60,7 @@ label {
 .btn-light {
     color: black;
     background-color: white;
+    margin-left: 10px;
 }
 
 .card-img-top {
