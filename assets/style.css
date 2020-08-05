@@ -16,7 +16,7 @@ body {
 }
 
 a {
-    color: white !important;
+    color: black !important;
 }
 
 label {
@@ -57,12 +57,23 @@ label {
     margin-bottom: 20px;
 }
 
+.btn-light {
+    color: black;
+    background-color: white;
+}
+
 .card-img-top {
     width: 100%;
     height: 25vw;
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
+}
+
+#pick-me {
+    color: white !important;
+    background-color: black;
+    border-color: black;
 }
 
 .modal-header {
