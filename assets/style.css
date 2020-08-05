@@ -46,6 +46,8 @@ label {
 .btn {
     background-color:black;
     color: white;
+    border-color: black;
+    font-size: 18px !important;
 }
 
 .card-img-top {
