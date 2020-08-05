@@ -1,5 +1,6 @@
 var dogIdArray = [];
 var searchSt = "";
+var stateName = "";
 
 $("#search-button").on("click", function() {
 
@@ -7,6 +8,8 @@ $("#search-button").on("click", function() {
     $("#dogInfo").empty();
     searchSt = $("#searchState").val();
     console.log(searchSt);
+    stateName = $("#searchState option:selected").text();
+    console.log(stateName);
 
     event.preventDefault();  //This is commented as it blocks the href -- need to findout why?
 
@@ -22,7 +25,7 @@ $("#search-button").on("click", function() {
             for(var i = 0; i<dogData.length; i++) {
               var tempData = dogData[i].temperament;
               if (breedType) {
-                if (breedType === dogData[i].name) {
+                if (breedType.toUpperCase() === (dogData[i].name).toUpperCase()) {
                     addDogInfoToDiv(dogData[i]);
                 } 
               }else {
@@ -52,7 +55,6 @@ function addTheImage(dogId) {
 
             console.log("addTheImage" + queryUrl);
             console.log(dogId);
-            
             var dogImg = $("<img>");
             //dogImg.css({'display': 'block', 'width': '1005'});
             //dogImg.css({'max-width': 'fit-content', 'margin-left': 'auto', 'margin-right':'auto'});
@@ -144,17 +146,17 @@ function getPetFinderToken(breed, searchState) {
       $("#available-dogList").empty();
       if (response.animals.length === 0) {
         $("#noResponse").empty();
-        $('#noResponse').append("<p>" + breedType + " is not available in " + searchState + ". Please search again </p>");
+        $('#noResponse').append("<p>" + breedType + " is not available in " + stateName + ". Please search again </p>");
         $('#responseModal').modal('show');
         return;
-      };
+      } 
 
       for (var n=0; n<response.animals.length; n++) {
           //console.log("*******" + n);
           console.log(response.animals[n]);
           var state = response.animals[n].organization_id;
           //console.log(state);
-          if (state.indexOf("NJ") >= 0 ) {
+          if (state.indexOf(searchState) >= 0 ) {
             console.log("*******" + n);
             var newCard = $("<div>").addClass("card");
             var newCardBody = $("<div>").addClass("card-body");
@@ -182,7 +184,7 @@ function getPetFinderToken(breed, searchState) {
     $.ajax(settings).error(function() {
       console.log("In error handling");
       $("#noResponse").empty();
-        $('#noResponse').append("<p>" + breedType + " is not available in " + searchState + ". Please search again </p>");
+        $('#noResponse').append("<p>" + breedType + " is not available in " + stateName + ". Please search again </p>");
         $('#responseModal').modal('show');
         return;
     })
