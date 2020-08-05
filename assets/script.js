@@ -69,7 +69,7 @@ function addTheImage(dogId) {
 
 }
 
-function addDogInfoToDiv (dogData) {
+function addDogInfoToDiv (dogData, randomDog) {
     var tempData = dogData.temperament;
     var newCol = $("<div>");
     newCol.addClass("col mb-4");
@@ -103,10 +103,30 @@ $("#clear-button").on("click", function() {
     $("#available-dogList").empty();
 })
 
-$("#surpiseMe-button").on("click", function() {
+$("#surpriseMe-button").on("click", function() {
 
-    console.log("Surprise Me .....");
+  console.log("Surprise!");
+  $("#dogInfo").empty();
+  searchSt = $("#searchState").val();
+  console.log(searchSt);
+
+  // event.preventDefault();  //This is commented as it blocks the href -- need to findout why?
+
+  $.ajax({
+      url: "https://api.thedogapi.com/v1/breeds", 
+      method: "GET",
+  }).then ( function (randomDog) {
+    breedDataLength = randomDog.length;
+    console.log(breedDataLength);
+    var num = Math.floor(Math.random() * breedDataLength);
+     console.log(num);
+     addDogInfoToDiv(randomDog[num]);
+     for (var i = 0; i<randomDog.length; i++) {
+      addTheImage(dogIdArray[i]); 
+  } 
+   })
 })
+
 
 function getPetFinderToken(breed, searchState) {
     var settings = {
