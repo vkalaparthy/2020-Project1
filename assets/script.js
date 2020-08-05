@@ -143,7 +143,9 @@ function getPetFinderToken(breed, searchState) {
       console.log("******************");
       $("#available-dogList").empty();
       if (response.animals.length === 0) {
-        $("#available-dogList").append("<h5> Sorry " + breedType + " is not avilable </h5>");
+        $("#noResponse").empty();
+        $('#noResponse').append("<p>" + breedType + " is not available in " + searchState + ". Please search again </p>");
+        $('#responseModal').modal('show');
         return;
       };
 
@@ -176,7 +178,15 @@ function getPetFinderToken(breed, searchState) {
           }
           //if(response.animals[n].organization_id)
       }
-    });
+    },
+    $.ajax(settings).error(function() {
+      console.log("In error handling");
+      $("#noResponse").empty();
+        $('#noResponse').append("<p>" + breedType + " is not available in " + searchState + ". Please search again </p>");
+        $('#responseModal').modal('show');
+        return;
+    })
+    );
   }
   
   $("#dogInfo").on("click",  "#pick-me", function() {
