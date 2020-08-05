@@ -16,7 +16,7 @@ body {
 }
 
 a {
-    color: white !important;
+    color: black !important;
 }
 
 label {
@@ -55,6 +55,11 @@ label {
     border-radius: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.btn-light {
+    color: black;
+    background-color: white;
 }
 
 .card-img-top {
