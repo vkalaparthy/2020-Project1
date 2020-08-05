@@ -31,7 +31,7 @@ a {
     right: 0;
     bottom: 41px;
     padding: 5px;
-    height: calc(100vh - 230px);
+    height: calc(100vh - 105px);
     overflow: auto;
 }
 
