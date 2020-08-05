@@ -32,7 +32,7 @@ $("#search-button").on("click", function() {
                         addDogInfoToDiv(dogData[i]);
                       }
                     }
-                } dI
+                }
             }
             for (var i=0; i<dogIdArray.length; i++) {
                 addTheImage(dogIdArray[i]);
