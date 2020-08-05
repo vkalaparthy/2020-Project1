@@ -1,22 +1,24 @@
-# 2020-Project1
-Class project
+## Dream Dog
 
-We plan to create an application that allows users to search for dog breeds that fit their specific qualifications, wants, and needs. The application will allow users to select multiple criteria, then retrieve information/photos related to the breeds that appear in the results.
-The website will have the following components:
+## Table of contents
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Features](#features)
 
--A homepage containing information about the purpose of the application
+## General Info
 
--A button that allows the user to get started
+An application that will run in a browser and feature dynamically updated HTML, CSS, and JavaScript. Utilizes The Dog API and PetFinder API to allow a user to search for dogs in a selected state by either inputting a breed type or both a breed group and temperament. Users may alternatively select "Surpise Me" and a state to find a random dog.
 
--A series of optional selections that appear after clicking on the start button
+## Technologies
 
--A results page that contains photos of and details about the breeds that fit the users selections
+* The Dog API
+* PetFinder API
+* Bootstrap 4.5
+* jQuery
+* Font Awesome
 
+## Features
 
-User Stories:
+* Find your dream dog in your state
+* Discover a surprise dog in your state using the Surpirse Me feature
 
-As a user, I want to be able to select criteria so that I can retrieve dog breeds that fit that criteria
-
-As a user, I want to be able to view pictures of the retrieved dog breeds after selecting and searching the criteria
-
-As a user, I want to be able to view details about the retrieved dog breeds after selecting and searching the criteria
