@@ -55,6 +55,12 @@ label {
     margin-bottom: 20px;
 }
 
+.btn-dark:hover {
+    background-color: gray;
+    color: white;
+    border-color: gray;
+}
+
 .btn-light {
     color: black;
     background-color: white;
