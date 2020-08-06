@@ -47,10 +47,7 @@ label {
     margin: 15px 0 15px 0;
 }
 
-.btn-primary {
-    background-color:black;
-    color: white !important;
-    border-color: black;
+.btn-dark {
     font-size: 18px !important;
     border-radius: 25px;
     margin-top: 20px;
