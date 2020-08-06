@@ -250,6 +250,8 @@ function getPetFinderToken(breed, searchState) {
     console.log(button.attr("id"));
     //console.log(button.attr("data-breed-name"));
     var breedType = button.attr("data-breed-name");
+    if (breedType === "Poodle (Miniature)" || breedType === "Poodle (Toy)")
+      breedType = "Poodle";
     console.log(breedType);
     //event.preventDefault();
     //console.log (this.data(value));
