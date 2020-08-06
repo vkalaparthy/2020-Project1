@@ -1,9 +1,12 @@
 ## Dream Dog
 
+Find your dream dog in your state or discover a surprise dog in your state using the Surprise Me feature.
+
 ## Table of contents
 * [General Info](#general-info)
 * [Technologies](#technologies)
 * [Features](#features)
+* [How to Use](#how-to-use)
 
 ## General Info
 
@@ -19,6 +22,25 @@ An application that will run in a browser and feature dynamically updated HTML, 
 
 ## Features
 
-* Find your dream dog in your state
-* Discover a surprise dog in your state using the Surpirse Me feature
+* 
+
+## How to Use
+
+* The application has multiple options for searching for a dog: 1. Selecting a state and breed type, 2. Selecting a state, breed group, and temperament, or 3. Selecting a state and "Surprise Me".
+
+* Option 1: Upon entering the application, select a state, then type in a specific breed group (ex. Golden Retriever, Boxer, Bulldog, etc) and press the Submit button.
+    * If a state or breed group is not selected, the user will receive an error message asking that they make the selection(s).
+
+* Option 2: Upon entering the application, select a state, then select a breed type and temperment, and press the Submit button.
+    * If a state, breed type, or temperament is not selected, the user will receive an error message asking that they make the selection(s).
+
+* Option 3: Upon entering the application, select a state and then press the Surprise Me button.
+    * If a state is not selected, the user will receive an error message asking that they make the selection.
+
+* After performing one of the three options, one or more cards will appear, each with a picture of and information about a breed group.
+
+* In each card will be a Select Me button. Choosing this button will cause dogs to appear in the Available Dogs box.
+    * If the selected breed group is not available in the state chosen from the dropdown, an error message saying, "French Bulldog is not available in state. Please search again" will appear.
+
+* If the user would like to perform a new search or make select new fields, they may use the Clear button to empty all of the fields and remove any breed groups that may have appeared.
 
