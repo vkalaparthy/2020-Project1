@@ -49,7 +49,7 @@ label {
 
 .btn-primary {
     background-color:black;
-    color: white;
+    color: white !important;
     border-color: black;
     font-size: 18px !important;
     border-radius: 25px;
@@ -60,7 +60,9 @@ label {
 .btn-light {
     color: black;
     background-color: white;
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .card-img-top {
