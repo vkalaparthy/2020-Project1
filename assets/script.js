@@ -1,10 +1,13 @@
-var dogIdArray = [];
+
 var searchSt = "";
 var stateName = "";
+var dogIdArray;
+
 
 $("#search-button").on("click", function() {
-    // console.log("Button-clicked");
-    
+    console.log("Button-clicked");
+    dogIdArray = [];
+  
     $("#dogInfo").empty();
     $("#available-dogList").empty();
     searchSt = $("#searchState").val();
@@ -118,7 +121,7 @@ function addDogInfoToDiv (dogData) {
     var newP2 = $("<p>").addClass("card-text");
     newP2.append(tempData);
     newCardBody.append(newP2);
-    newCardBody.append("<p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-primary' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-primary' href='index.html' role='button'>No</a>");
+    newCardBody.append("<p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-dark' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-dark' href='index.html' role='button'>No</a>");
     newCard.append(newCardBody);
     dogIdArray.push(dogData.id);
 }
@@ -132,6 +135,8 @@ $("#surpriseMe-button").on("click", function() {
 
   console.log("Surprise!");
   $("#dogInfo").empty();
+  dogIdArray = [];
+
   searchSt = $("#searchState").val();
   stateName = $("#searchState option:selected").text();
   console.log(searchSt);
@@ -146,7 +151,7 @@ $("#surpriseMe-button").on("click", function() {
     console.log(breedDataLength);
     var num = Math.floor(Math.random() * breedDataLength);
      console.log(num);
-     addDogInfoToDiv(randomDog[num]);
+     addDogInfoToDiv(randomDog[num], dogIdArray);
      console.log(dogIdArray)
      for (var i = 0; i<dogIdArray.length; i++) {
       addTheImage(dogIdArray[i]); 
