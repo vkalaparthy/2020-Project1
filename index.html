@@ -23,7 +23,7 @@
           <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
             <form class="form-inline">
-                <button type="button" class="btn btn-light"><a href="index.html">Back to Search</a></button>
+                <button type="button" class="btn btn-light"><a href="index.html">Back To Search</a></button>
             </form>
           </div>
         </nav>
@@ -36,7 +36,7 @@
                 <form>
                     <div class="form-group">
                         <label for="searchState">State</label>
-                        <select class="form-control" id="searchState" required>
+                        <select class="form-control" id="searchState">
                             <option value="">Please Choose Your State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -96,7 +96,7 @@
                     <div class="form-group">
                         <label for="searchType">Breed Type</label>
                         <input type="text" class="form-control" placeholder="Golden Retriever, Dalmatian, Labrador Retriever, etc." id="searchType"></input>
-                        <small class="form-text text-danger">If you enter a Breed Type, this will be the only option we search for!</small>
+                        <small class="form-text text-danger">If you enter a Breed Type, this and your state will be the only things we search for!</small>
                     </div>
                     
                     <br>
@@ -130,11 +130,11 @@
                         </select>
                     </div>
 
-                    <a href="#row-dogInfo"><button class="btn btn-dark" id="search-button">Submit</button></a>
+                    <button class="btn btn-dark" id="search-button">Submit</button>
 
                     <button type="reset" value="Reset" class="btn btn-dark" id="clear-button">Clear</button>
 
-                    <a href="#row-available-dogList"><button class="btn btn-dark" id="surpriseMe-button"><i class="fa fa-smile" style="font-size: 24px; color:white"> Surprise Me</i></button></a>
+                    <button class="btn btn-dark" id="surpriseMe-button"><i class="fa fa-smile" style="font-size: 24px; color:white"> Surprise Me</i></button>
                 </form>
                 
 
@@ -187,9 +187,10 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p>State is Required</p>
-                    <p>Select Either Breed Type OR Breed Group & Temperament</p>
-                    <p>OR click Surprise Me</p>
+                    <h4>You must choose:</h4>
+                    <p>1. Your state AND</p>
+                    <p>2. EITHER Breed Type OR Breed Group OR Temperament.</p>
+                    <h6>OR you can click <strong>Surprise Me</strong> and we can select something for you!</h6>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
