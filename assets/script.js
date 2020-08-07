@@ -67,11 +67,11 @@ $("#search-button").on("click", function() {
           for (var i=0; i<dogIdArray.length; i++) {
               addTheImage(dogIdArray[i]);
           }
-          location.hash="#row-dogInfo";
+          location.hash = "#row-dogInfo";
           resetFormInputs();
       })
     }
-  })
+  })  
 
 function addTheImage(dogId) {
 
@@ -134,12 +134,16 @@ $("#clear-button").on("click", function() {
 $("#surpriseMe-button").on("click", function() {
 
   console.log("Surprise!");
-  $("#dogInfo").empty();
   dogIdArray = [];
-
+  $("#dogInfo").empty();
+  $("#available-dogList").empty();
   searchSt = $("#searchState").val();
-  stateName = $("#searchState option:selected").text();
+  if(searchSt === "") {
+    $('#inputModal').modal('show');
+    return;
+  }
   console.log(searchSt);
+  stateName = $("#searchState option:selected").text();
 
   event.preventDefault();  //This is commented as it blocks the href -- need to findout why?
 
@@ -156,7 +160,9 @@ $("#surpriseMe-button").on("click", function() {
      for (var i = 0; i<dogIdArray.length; i++) {
       addTheImage(dogIdArray[i]); 
   } 
+      location.hash = "#row-dogInfo";
    })
+
 })
 
 function resetFormInputs() {
@@ -263,5 +269,6 @@ function getPetFinderToken(breed, searchState) {
     //console.log (this.data(value));
     getPetFinderToken(breedType, searchSt);
     //windows.location.replace("finalResults.html");
+    location.hash = "#row-available-dogList";
 
   });
