@@ -51,8 +51,7 @@ label {
     border: solid 2px green;
 }
 
-.btn-primary {
-    background-color:black;
+.btn-dark {
     color: white !important;
     border-color: black;
     font-size: 18px !important;
