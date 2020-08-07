@@ -47,14 +47,19 @@ label {
     margin: 15px 0 15px 0;
 }
 
-.btn-primary {
-    background-color:black;
+.btn-dark {
     color: white !important;
     border-color: black;
     font-size: 18px !important;
     border-radius: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.btn-dark:hover {
+    background-color: gray;
+    color: white;
+    border-color: gray;
 }
 
 .btn-light {
@@ -71,12 +76,6 @@ label {
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
-}
-
-#pick-me {
-    color: white !important;
-    background-color: black;
-    border-color: black;
 }
 
 .modal-header {

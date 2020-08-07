@@ -117,7 +117,7 @@ function addDogInfoToDiv (dogData) {
     var newP2 = $("<p>").addClass("card-text");
     newP2.append(tempData);
     newCardBody.append(newP2);
-    newCardBody.append("<p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-primary' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-primary' href='index.html' role='button'>No</a>");
+    newCardBody.append("<p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-dark' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-dark' href='index.html' role='button'>No</a>");
     newCard.append(newCardBody);
     dogIdArray.push(dogData.id);
 }
