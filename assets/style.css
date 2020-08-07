@@ -47,6 +47,10 @@ label {
     margin: 15px 0 15px 0;
 }
 
+.card:hover {
+    border: solid 2px green;
+}
+
 .btn-primary {
     background-color:black;
     color: white !important;

@@ -3,8 +3,8 @@ var searchSt = "";
 var stateName = "";
 
 $("#search-button").on("click", function() {
-    console.log("Button-clicked");
-  
+    // console.log("Button-clicked");
+    
     $("#dogInfo").empty();
     $("#available-dogList").empty();
     searchSt = $("#searchState").val();
@@ -64,10 +64,11 @@ $("#search-button").on("click", function() {
           for (var i=0; i<dogIdArray.length; i++) {
               addTheImage(dogIdArray[i]);
           }
+          location.hash="#row-dogInfo";
           resetFormInputs();
       })
     }
-  })  
+  })
 
 function addTheImage(dogId) {
 
@@ -214,7 +215,7 @@ function getPetFinderToken(breed, searchState) {
           var newCardBody = $("<div>").addClass("card-body");
           var dImg = $("<img>");
           if (response.animals[n].photos.length > 0) {
-            dImg.attr("src", response.animals[n].photos[0].small);
+            dImg.attr("src", response.animals[n].photos[0].medium);
             newCardBody.append(dImg);
           }
           newCardBody.append("<p> Primary: " + response.animals[n].breeds.primary + "</p>");
