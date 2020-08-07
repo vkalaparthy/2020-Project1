@@ -1,9 +1,12 @@
-var dogIdArray = [];
+
 var searchSt = "";
 var stateName = "";
+var dogIdArray;
+
 
 $("#search-button").on("click", function() {
     console.log("Button-clicked");
+    dogIdArray = [];
   
     $("#dogInfo").empty();
     $("#available-dogList").empty();
@@ -131,6 +134,8 @@ $("#surpriseMe-button").on("click", function() {
 
   console.log("Surprise!");
   $("#dogInfo").empty();
+  dogIdArray = [];
+
   searchSt = $("#searchState").val();
   stateName = $("#searchState option:selected").text();
   console.log(searchSt);
@@ -145,7 +150,7 @@ $("#surpriseMe-button").on("click", function() {
     console.log(breedDataLength);
     var num = Math.floor(Math.random() * breedDataLength);
      console.log(num);
-     addDogInfoToDiv(randomDog[num]);
+     addDogInfoToDiv(randomDog[num], dogIdArray);
      console.log(dogIdArray)
      for (var i = 0; i<dogIdArray.length; i++) {
       addTheImage(dogIdArray[i]); 
@@ -214,7 +219,7 @@ function getPetFinderToken(breed, searchState) {
           var newCardBody = $("<div>").addClass("card-body");
           var dImg = $("<img>");
           if (response.animals[n].photos.length > 0) {
-            dImg.attr("src", response.animals[n].photos[0].small);
+            dImg.attr("src", response.animals[n].photos[0].medium);
             newCardBody.append(dImg);
           }
           newCardBody.append("<p> Primary: " + response.animals[n].breeds.primary + "</p>");
