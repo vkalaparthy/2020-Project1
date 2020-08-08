@@ -51,6 +51,10 @@ label {
     border: solid 2px green;
 }
 
+.pupBody:hover {
+    background-color: #e6e6e6;
+}
+
 .btn-dark {
     color: white !important;
     border-color: black;

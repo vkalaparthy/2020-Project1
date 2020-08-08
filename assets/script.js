@@ -90,7 +90,7 @@ function addDogInfoToDiv (dogData) {
     $("#dogInfo").append(newCol);
     var newCard = $("<div>");
     var dogId = dogData.id;
-    newCard.addClass("card");
+    newCard.addClass("card pupBody");
     newCard.attr("id", "id-"+dogId);
     newCol.append(newCard);
     
@@ -196,16 +196,16 @@ function fetchPetFinderData(token, breedType, searchState) {
       var state = response.animals[n].organization_id;
 
       var newCard = $("<div>").addClass("card");
-      var newCardBody = $("<div>").addClass("card-body");
+      var newCardBody = $("<div>").addClass("card-body pupBody");
       var dImg = $("<img>");
       
       if (response.animals[n].photos.length > 0) {
         dImg.attr("src", response.animals[n].photos[0].medium);
         newCardBody.append(dImg);
       }
-      newCardBody.append("<p> Primary: " + response.animals[n].breeds.primary + "</p>");
+      newCardBody.append("<p> Primary Breed: " + response.animals[n].breeds.primary + "</p>");
       if (response.animals[n].breeds.secondary != null) {
-          newCardBody.append("<p> Secondary: " + response.animals[n].breeds.secondary + "</p>");
+          newCardBody.append("<p> Secondary Breed: " + response.animals[n].breeds.secondary + "</p>");
       }
       newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
       newCard.append(newCardBody);
