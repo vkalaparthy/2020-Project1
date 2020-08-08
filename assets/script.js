@@ -6,7 +6,7 @@ $("#search-button").on("click", function() {
     dogIdArray = [];
   
     $("#dogInfo").empty();
-    $("#available-dogList").empty();
+    $("#availList").empty();
     searchSt = $("#searchState").val();
     
     if(searchSt === "") {
@@ -112,13 +112,13 @@ function addDogInfoToDiv (dogData) {
 
 $("#clear-button").on("click", function() {
     $("#dogInfo").empty();
-    $("#available-dogList").empty();
+    $("#availList").empty();
 })
 
 $("#surpriseMe-button").on("click", function() {
   dogIdArray = [];
   $("#dogInfo").empty();
-  $("#available-dogList").empty();
+  $("#availList").empty();
   searchSt = $("#searchState").val();
   
   if(searchSt === "") {
@@ -182,7 +182,7 @@ function fetchPetFinderData(token, breedType, searchState) {
   }
 
   $.ajax(settings).done(function (response) {
-    $("#available-dogList").empty();
+    $("#availList").empty();
     
     if (response.animals.length === 0) {
       $("#noResponse").empty();
@@ -194,7 +194,10 @@ function fetchPetFinderData(token, breedType, searchState) {
 
     for (var n=0; n<response.animals.length; n++) {
       var state = response.animals[n].organization_id;
-
+      console.log(response.animals[n]);
+      var newCol = $("<div>");
+      newCol.addClass("col mb-4");
+      
       var newCard = $("<div>").addClass("card");
       var newCardBody = $("<div>").addClass("card-body pupBody");
       var dImg = $("<img>");
@@ -207,9 +210,11 @@ function fetchPetFinderData(token, breedType, searchState) {
       if (response.animals[n].breeds.secondary != null) {
           newCardBody.append("<p> Secondary Breed: " + response.animals[n].breeds.secondary + "</p>");
       }
+      
       newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
       newCard.append(newCardBody);
-      $("#available-dogList").append(newCard);
+      newCol.append(newCard);
+      $("#availList").append(newCol);
     }
   
   },
