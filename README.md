@@ -44,5 +44,18 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 * In each card will be a Select Me button. Choosing this button will cause dogs to appear in the Available Dogs box.
     * If the selected breed group is not available in the state chosen from the dropdown, an error message saying, "Breed group is not available in selected state. Please search again" will appear.
 
+* After searching for a dog, the user may select either Yes or No for a specific search result.
+    * Selecting Yes will either pull up one or more results with the dog breed in a selected state or will result in an error message saying that the selected dog breed is not available in that state.
+
+    * Selecting No will clear all search results and search fields.
+
+* When the user selects Yes for a specific breed and that breed is available in the selected state, the results with available dogs will display a picture of a dog, its primary and (if applicable) secodary breed, as well as a Pick Me! Pick Me! button.
+
+* Selecting the Pick Me! Pick Me! will redirect the user to the PetFinder website where the user can view more information about the dog.
+
 * If the user would like to perform a new search or select new fields, they may use the Clear button to empty all of the fields and remove any breed groups that may have appeared.
+
+* If the user would like to return to the top of the site, they may click the Back to Search buttons to clear results and return to the top.
+
+* If the user would like to clear their selections or begin a new search, they may choose the Clear button to clear the search results and search fields.
 
