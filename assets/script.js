@@ -204,9 +204,10 @@ function fetchPetFinderData(token, breedType, searchState) {
         newCardBody.append(dImg);
       }
       newCardBody.append("<p> Primary: " + response.animals[n].breeds.primary + "</p>");
-      if (response.animals[n].breeds.secondary != null) 
+      if (response.animals[n].breeds.secondary != null) {
           newCardBody.append("<p> Secondary: " + response.animals[n].breeds.secondary + "</p>");
-      newCardBody.append("<a href='" + response.animals[n].url + "' target='_blank'>" + response.animals[n].url + "</a>");
+      }
+      newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
       newCard.append(newCardBody);
       $("#available-dogList").append(newCard);
     }
