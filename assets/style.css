@@ -61,6 +61,15 @@ label {
     border: solid 2px green;
 }
 
+.btn-light {
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .card-img-top {
     width: 100%;
     height: 25vw;
