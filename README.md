@@ -28,23 +28,34 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 
 ## How to Use
 
-* The application has multiple options for searching for a dog: 1. Selecting a state and breed type, 2. Selecting a state, breed group and/or temperament, or 3. Selecting a state and Surprise Me.
+* The application has multiple options for searching for a dog:
+
+    * Selecting a state and breed type
+    
+    * Selecting a state, breed group and/or temperament
+    
+    * Selecting a state and Surprise Me.
 
 * Option 1: Upon entering the application, select a state, then type in a specific breed group (ex. Golden Retriever, Boxer, Bulldog, etc) and press the Submit button.
+
     * If a state or breed group is not selected, the user will receive an error message asking that they make the selection(s).
 
 * Option 2: Upon entering the application, select a state, then select a breed type and/or temperment, and press the Submit button.
+
     * If a state, breed type, and/or temperament is not selected, the user will receive an error message asking that they make the selection(s).
 
 * Option 3: Upon entering the application, select a state and then press the Surprise Me button.
+
     * If a state is not selected, the user will receive an error message asking that they make the selection.
 
 * After performing one of the three options, one or more cards will appear, each with a picture of and information about a breed group.
 
 * In each card will be a Select Me button. Choosing this button will cause dogs to appear in the Available Dogs box.
+
     * If the selected breed group is not available in the state chosen from the dropdown, an error message saying, "Breed group is not available in selected state. Please search again" will appear.
 
 * After searching for a dog, the user may select either Yes or No for a specific search result.
+
     * Selecting Yes will either pull up one or more results with the dog breed in a selected state or will result in an error message saying that the selected dog breed is not available in that state.
 
     * Selecting No will clear all search results and search fields.
