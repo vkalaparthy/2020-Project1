@@ -206,7 +206,8 @@ function fetchPetFinderData(token, breedType, searchState) {
         dImg.attr("src", response.animals[n].photos[0].medium);
         newCardBody.append(dImg);
       } else {
-        dImg.attr("src", );
+        dImg.attr("src", "assets/images/image.png")
+        newCardBody.append(dImg);
       }
       
       newCardBody.append("<p> Primary Breed: " + response.animals[n].breeds.primary + "</p>");
