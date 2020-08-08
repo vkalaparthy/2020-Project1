@@ -100,29 +100,31 @@ function addDogInfoToDiv (dogData) {
     cardTitle.addClass("card-title");
     cardTitle.text(dogData.name);
     newCardBody.append(cardTitle);
+
     var cardText = $("<ul>");
     cardText.addClass("list-group list-group-flush pupBody");
+
     var li1 = $("<li>");
     li1.addClass("list-group-item");
     li1.text("Group: " + dogData.breed_group);
     cardText.append(li1);
+
     var li2 = $("<li>");
     li2.addClass("list-group-item");
     li2.text("Life span: " + dogData.life_span);
     cardText.append(li2);
+
     var li3 = $("<li>");
     li3.addClass("list-group-item");
     li3.text("Temperament: " + tempData);
     cardText.append(li3);
+
     newCardBody.append(cardText);
+    
     newCardBody.append("<br><p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-dark' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-dark' href='index.html' role='button'>No</a>");
+    
     newCard.append(newCardBody);
-    dogIdArray.push(dogData.id);
-    
-
-
-
-    
+    dogIdArray.push(dogData.id);    
 }
 
 $("#clear-button").on("click", function() {
