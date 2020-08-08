@@ -28,13 +28,13 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 
 ## How to Use
 
-* The application has multiple options for searching for a dog: 1. Selecting a state and breed type, 2. Selecting a state, breed group, and temperament, or 3. Selecting a state and Surprise Me.
+* The application has multiple options for searching for a dog: 1. Selecting a state and breed type, 2. Selecting a state, breed group and/or temperament, or 3. Selecting a state and Surprise Me.
 
 * Option 1: Upon entering the application, select a state, then type in a specific breed group (ex. Golden Retriever, Boxer, Bulldog, etc) and press the Submit button.
     * If a state or breed group is not selected, the user will receive an error message asking that they make the selection(s).
 
-* Option 2: Upon entering the application, select a state, then select a breed type and temperment, and press the Submit button.
-    * If a state, breed type, or temperament is not selected, the user will receive an error message asking that they make the selection(s).
+* Option 2: Upon entering the application, select a state, then select a breed type and/or temperment, and press the Submit button.
+    * If a state, breed type, and/or temperament is not selected, the user will receive an error message asking that they make the selection(s).
 
 * Option 3: Upon entering the application, select a state and then press the Surprise Me button.
     * If a state is not selected, the user will receive an error message asking that they make the selection.
