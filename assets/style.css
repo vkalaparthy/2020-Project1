@@ -39,6 +39,9 @@ label {
     font-weight: bold;
 }
 
+.list-group-item {
+    padding-left: 0;
+}
 .btn-dark {
     color: white !important;
     border-color: black;

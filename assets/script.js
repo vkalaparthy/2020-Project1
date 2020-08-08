@@ -96,18 +96,33 @@ function addDogInfoToDiv (dogData) {
     
     var newCardBody = $("<div>");
     newCardBody.addClass("card-body");
-    var newh5 = $("<h5>");
-    newh5.text(dogData.name);
-    newCardBody.append(newh5);
-    var newP1 = $("<p>");
-    newP1.addClass("card-text").append( " Group: " + dogData.breed_group + "<br>" + "<br>" + " Life span: " + dogData.life_span);
-    newCardBody.append(newP1);
-    var newP2 = $("<p>").addClass("card-text");
-    newP2.append(tempData);
-    newCardBody.append(newP2);
-    newCardBody.append("<p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-dark' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-dark' href='index.html' role='button'>No</a>");
+    var cardTitle = $("<h5>");
+    cardTitle.addClass("card-title");
+    cardTitle.text(dogData.name);
+    newCardBody.append(cardTitle);
+    var cardText = $("<ul>");
+    cardText.addClass("list-group list-group-flush pupBody");
+    var li1 = $("<li>");
+    li1.addClass("list-group-item");
+    li1.text("Group: " + dogData.breed_group);
+    cardText.append(li1);
+    var li2 = $("<li>");
+    li2.addClass("list-group-item");
+    li2.text("Life span: " + dogData.life_span);
+    cardText.append(li2);
+    var li3 = $("<li>");
+    li3.addClass("list-group-item");
+    li3.text("Temperament: " + tempData);
+    cardText.append(li3);
+    newCardBody.append(cardText);
+    newCardBody.append("<br><p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-dark' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-dark' href='index.html' role='button'>No</a>");
     newCard.append(newCardBody);
     dogIdArray.push(dogData.id);
+    
+
+
+
+    
 }
 
 $("#clear-button").on("click", function() {
