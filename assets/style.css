@@ -15,21 +15,12 @@ body {
     height: 75px;
 }
 
-a {
-    color: black !important;
-}
-
-label {
-    font-weight: bold;
-}
-
-.footer {
-    right: 0;
-    left: 0;
-    bottom: 0 !important;
-    height: 40px !important;
-    padding: 10px !important;
-    color: #fff;
+.btn-light {
+    color: black;
+    background-color: white;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .content {
@@ -43,16 +34,8 @@ label {
     overflow: auto;
 }
 
-.card {
-    margin: 15px 0 15px 0;
-}
-
-.card:hover {
-    border: solid 2px green;
-}
-
-.pupBody:hover {
-    background-color: #e6e6e6;
+label {
+    font-weight: bold;
 }
 
 .btn-dark {
@@ -68,6 +51,14 @@ label {
     background-color: gray;
     color: white;
     border-color: gray;
+}
+
+.card {
+    margin: 15px 0 15px 0;
+}
+
+.card:hover {
+    border: solid 2px green;
 }
 
 .btn-light {
@@ -87,8 +78,25 @@ label {
     margin-right: auto;
 }
 
+.pupBody:hover {
+    background-color: #e6e6e6;
+}
+
+a {
+    color: black !important;
+}
+
 .modal-header {
     background-color: yellow;
+}
+
+.footer {
+    right: 0;
+    left: 0;
+    bottom: 0 !important;
+    height: 40px !important;
+    padding: 10px !important;
+    color: #fff;
 }
 
 @media only screen and (max-width: 768px) {
