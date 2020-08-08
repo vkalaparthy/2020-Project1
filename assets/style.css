@@ -55,6 +55,9 @@ label {
     background-color: #e6e6e6;
 }
 
+.list-group-item {
+    padding-left: 0;
+}
 .btn-dark {
     color: white !important;
     border-color: black;
