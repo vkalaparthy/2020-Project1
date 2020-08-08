@@ -200,7 +200,7 @@ function fetchPetFinderData(token, breedType, searchState) {
       
       var newCard = $("<div>").addClass("card");
       var newCardBody = $("<div>").addClass("card-body pupBody");
-      var dImg = $("<img>");
+      var dImg = $("<img>").addClass("card-img-top");
       
       if (response.animals[n].photos.length > 0) {
         dImg.attr("src", response.animals[n].photos[0].medium);
