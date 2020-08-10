@@ -105,18 +105,24 @@ function addDogInfoToDiv (dogData) {
     cardText.addClass("list-group list-group-flush pupBody");
 
     var li1 = $("<li>");
+    var boldGroup = "Group: ";
+    var bold1 = boldGroup.bold();
     li1.addClass("list-group-item");
-    li1.text("Group: " + dogData.breed_group);
+    li1.append(bold1 + dogData.breed_group);
     cardText.append(li1);
 
     var li2 = $("<li>");
+    var boldLife = "Lifespan: ";
+    var bold2 = boldLife.bold();
     li2.addClass("list-group-item");
-    li2.text("Life span: " + dogData.life_span);
+    li2.append(bold2 + dogData.life_span);
     cardText.append(li2);
 
     var li3 = $("<li>");
+    var boldTemp = "Temperament: ";
+    var bold3 = boldTemp.bold();
     li3.addClass("list-group-item");
-    li3.text("Temperament: " + tempData);
+    li3.append(bold3 + tempData);
     cardText.append(li3);
 
     newCardBody.append(cardText);
@@ -217,7 +223,7 @@ function fetchPetFinderData(token, breedType, searchState) {
       
       var newCard = $("<div>").addClass("card");
       var newCardBody = $("<div>").addClass("card-body pupBody");
-      var dImg = $("<img>").addClass("card-img-top");
+      var dImg = $("<img>").addClass("img-responsive card-img-top");
       
       if (response.animals[n].photos.length > 0) {
         dImg.attr("src", response.animals[n].photos[0].medium);
@@ -227,10 +233,44 @@ function fetchPetFinderData(token, breedType, searchState) {
         newCardBody.append(dImg);
       }
       
-      newCardBody.append("<p> Primary Breed: " + response.animals[n].breeds.primary + "</p>");
+      var cardTitle = $("<h5>");
+      cardTitle.addClass("card-title");
+      cardTitle.text(response.animals[n].name);
+      newCardBody.append("<br>")
+      newCardBody.append(cardTitle);  
+
+      var cardText = $("<ul>");
+      cardText.addClass("list-group list-group-flush pupBody");
+      cardText.css("list-style-type", "none");
+  
+      var li1 = $("<li>");
+      var boldGender = "Gender: ";
+      var bold1 = boldGender.bold();
+      li1.append(bold1 + response.animals[n].gender);
+      cardText.append(li1);
+
+      var li2 = $("<li>");
+      var boldBreed1 = "Primary Breed: ";
+      var bold2 = boldBreed1.bold();
+      li2.addClass("list-group-item");
+      li2.append(bold2 + response.animals[n].breeds.primary);
+      cardText.append(li2);
+      
       if (response.animals[n].breeds.secondary != null) {
-          newCardBody.append("<p> Secondary Breed: " + response.animals[n].breeds.secondary + "</p>");
-      }
+        var li3 = $("<li>");
+        var boldBreed2 = "Secondary Breed: ";
+        var bold3 = boldBreed2.bold();
+        li3.addClass("list-group-item");
+        li3.append(bold3 + response.animals[n].breeds.secondary);
+        cardText.append(li3);
+
+        newCardBody.append(cardText);
+    }
+
+      // newCardBody.append("<p> Primary Breed: " + response.animals[n].breeds.primary + "</p>");
+      // if (response.animals[n].breeds.secondary != null) {
+      //     newCardBody.append("<p> Secondary Breed: " + response.animals[n].breeds.secondary + "</p>");
+      // }
       
       newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
       newCard.append(newCardBody);

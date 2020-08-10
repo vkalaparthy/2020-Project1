@@ -63,7 +63,7 @@ label {
 }
 
 .card:hover {
-    border: solid 2px green;
+    border: solid 2px #2f3438;
 }
 
 .card-img-top {
@@ -75,6 +75,10 @@ label {
 }
 
 .pupBody:hover {
+    background-color: #e6e6e6;
+}
+
+.pupBody:hover .list-group-item {
     background-color: #e6e6e6;
 }
 
