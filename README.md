@@ -74,13 +74,13 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 
 * Empty Submit Modal, Submit with State and Breed Type, & Back To Search functionality:
 
-    * ![Dream Dog! (1)](https://user-images.githubusercontent.com/65187093/89839637-37dd6b80-db3c-11ea-80c4-0472c0f150cc.gif)
+    ![Dream Dog! (1)](https://user-images.githubusercontent.com/65187093/89839637-37dd6b80-db3c-11ea-80c4-0472c0f150cc.gif)
 
 * Surprise Me button with State, Woofs... Modal, & Clear Button functionality:
 
-    * ![Dream Dog! (2)](https://user-images.githubusercontent.com/65187093/89839844-bf2adf00-db3c-11ea-8c07-543046faaba8.gif)
+    ![Dream Dog! (2)](https://user-images.githubusercontent.com/65187093/89839844-bf2adf00-db3c-11ea-8c07-543046faaba8.gif)
 
 * State, Breed Group, and Temperament Submit & Woofs... Modal
 
-    * ![Dream Dog! (6)](https://user-images.githubusercontent.com/65187093/89840560-87249b80-db3e-11ea-96ae-662661627dde.gif)
+    ![Dream Dog! (6)](https://user-images.githubusercontent.com/65187093/89840560-87249b80-db3e-11ea-96ae-662661627dde.gif)
 
