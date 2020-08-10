@@ -63,7 +63,6 @@ $("#search-button").on("click", function() {
               addTheImage(dogIdArray[i]);
           }
           location.hash = "#row-dogInfo";
-          resetFormInputs();
       })
     }
   })  
@@ -152,7 +151,7 @@ $("#surpriseMe-button").on("click", function() {
     return;
   }
   stateName = $("#searchState option:selected").text();
-
+  
   $.ajax({
       url: "https://api.thedogapi.com/v1/breeds", 
       method: "GET",
@@ -170,6 +169,7 @@ $("#surpriseMe-button").on("click", function() {
         addTheImage(dogIdArray[i]);
     }
     })
+  location.hash = "#row-dogInfo";
 });
 
 function resetFormInputs() {
