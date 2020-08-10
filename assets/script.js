@@ -2,6 +2,7 @@ var searchSt = "";
 var stateName = "";
 
 $("#search-button").on("click", function() {
+    event.preventDefault();
     var dogIdArray = [];
   
     $("#dogInfo").empty();
@@ -18,8 +19,6 @@ $("#search-button").on("click", function() {
     var breedType = $("#searchType").val();
     var breedGroup = $("#searchGroup").val();
     var temperment = $("#searchTemperament").val();
-  
-    event.preventDefault();
   
     if (breedType === "" && breedGroup === "" && temperment === "") {
       $('#inputModal').modal('show');
@@ -61,7 +60,6 @@ $("#search-button").on("click", function() {
           }
           for (var i=0; i<dogIdArray.length; i++) {
               addTheImage(dogIdArray[i]);
-              dogIdArray.push(dogData[i].id);
           }
           location.hash = "#row-dogInfo";
           resetFormInputs();
