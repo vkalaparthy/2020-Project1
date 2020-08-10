@@ -1,6 +1,6 @@
 var searchSt = "";
 var stateName = "";
-var choiceOfBreedsForSupriseMe = ['German Shepherd', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle', 'Siberian Husky', 'American Bulldog'];
+var choiceOfBreedsForSupriseMe = ['German Shepherd', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle', 'Siberian Husky', 'American Bulldog', 'Labrador Retriever', 'American Pit Bull Terrier'];
 
 $("#search-button").on("click", function() {
     event.preventDefault();
@@ -221,7 +221,8 @@ function fetchPetFinderData(token, breedType, searchState) {
 
     for (var n=0; n<response.animals.length; n++) {
       var state = response.animals[n].organization_id;
-      console.log(response.animals[n]);
+      // console.log(response.animals[n]);
+      console.log(queryURL);
       var newCol = $("<div>");
       newCol.addClass("col mb-4");
       
@@ -298,7 +299,6 @@ $("#dogInfo").on("click",  "#pick-me", function() {
     breedType = "Pit Bull Terrier";
   if (breedType === "Olde English Bulldogge")
     breedType = "English Bulldog";
-  
   getPetFinderToken(breedType, searchSt);
   location.hash = "#row-available-dogList";
 });
