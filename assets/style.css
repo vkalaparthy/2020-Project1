@@ -11,7 +11,7 @@ body {
   z-index: 1;
 }
 
-/* Resize collapsable portion of navbar to prevent it from sticking out under the navbar */
+/* Resize collapsible portion of navbar to prevent it from sticking out under the navbar */
 .collapse {
     height: 75px;
 }
