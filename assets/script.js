@@ -1,5 +1,6 @@
 var searchSt = "";
 var stateName = "";
+var choiceOfBreedsForSupriseMe = ['German Shepherd', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle', 'Siberian Husky', 'American Bulldog'];
 
 $("#search-button").on("click", function() {
     event.preventDefault();
@@ -157,16 +158,18 @@ $("#surpriseMe-button").on("click", function() {
       method: "GET",
   }).then ( function (randomDog) {
     breedDataLength = randomDog.length;
-    var num = Math.floor(Math.random() * breedDataLength);
-    addDogInfoToDiv(randomDog[num], dogIdArray);
-    dogIdArray.push(randomDog[num].id);
-    
-    for (var i = 0; i<dogIdArray.length; i++) {
-      addTheImage(dogIdArray[i]); 
-    } 
-    location.hash = "#row-dogInfo";
-  });
-
+    var randomNum = Math.floor(Math.random() * choiceOfBreedsForSupriseMe.length);
+    for(var i=0; i<randomDog.length; i++) {
+      if (randomDog[i].name === choiceOfBreedsForSupriseMe[randomNum]) {
+        console.log(randomDog[i].name);
+        addDogInfoToDiv(randomDog[i]);
+        dogIdArray.push(randomDog[i].id);
+      }
+    }
+    for (var i=0; i<dogIdArray.length; i++) {
+        addTheImage(dogIdArray[i]);
+    }
+    })
 });
 
 function resetFormInputs() {
