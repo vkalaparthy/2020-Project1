@@ -1,9 +1,8 @@
 var searchSt = "";
 var stateName = "";
-var dogIdArray;
 
 $("#search-button").on("click", function() {
-    dogIdArray = [];
+    var dogIdArray = [];
   
     $("#dogInfo").empty();
     $("#availList").empty();
@@ -37,27 +36,32 @@ $("#search-button").on("click", function() {
             if (breedType) {
                 if (((dogData[i].name).toUpperCase()).indexOf(breedType.toUpperCase()) >= 0) {
                   addDogInfoToDiv(dogData[i]);
+                  dogIdArray.push(dogData[i].id);
               } 
             } else if (breedGroup != "" && temperment != "") {
               if (tempData !== undefined) {
                 if ((breedGroup === dogData[i].breed_group) && (tempData.indexOf(temperment) >= 0) ) {
                   addDogInfoToDiv(dogData[i]);
+                  dogIdArray.push(dogData[i].id);
                 }
               }
             } else {
               if (breedGroup != "") {
                 if(breedGroup === dogData[i].breed_group) {
                   addDogInfoToDiv(dogData[i]);
+                  dogIdArray.push(dogData[i].id);
                 }
               } else if (temperment != "") {
                 if (tempData != undefined && tempData.indexOf(temperment) >= 0) {
                   addDogInfoToDiv(dogData[i]);
+                  dogIdArray.push(dogData[i].id);
                 }
               }
             }
           }
           for (var i=0; i<dogIdArray.length; i++) {
               addTheImage(dogIdArray[i]);
+              dogIdArray.push(dogData[i].id);
           }
           location.hash = "#row-dogInfo";
           resetFormInputs();
@@ -129,8 +133,7 @@ function addDogInfoToDiv (dogData) {
     
     newCardBody.append("<br><p><strong>Do you want Adopt a " + dogData.name + "?</strong></p> <a class='btn btn-dark' href='#available-dogList' role='button' id='pick-me' data-breed-name='" + dogData.name +"'>Yes</a> <a class='btn btn-dark' href='index.html' role='button'>No</a>");
     
-    newCard.append(newCardBody);
-    dogIdArray.push(dogData.id);    
+    newCard.append(newCardBody);    
 }
 
 $("#clear-button").on("click", function() {
@@ -139,7 +142,7 @@ $("#clear-button").on("click", function() {
 })
 
 $("#surpriseMe-button").on("click", function() {
-  dogIdArray = [];
+  var dogIdArray = [];
   $("#dogInfo").empty();
   $("#availList").empty();
   searchSt = $("#searchState").val();
@@ -159,6 +162,7 @@ $("#surpriseMe-button").on("click", function() {
     breedDataLength = randomDog.length;
     var num = Math.floor(Math.random() * breedDataLength);
     addDogInfoToDiv(randomDog[num], dogIdArray);
+    dogIdArray.push(randomDog[num].id);
     
     for (var i = 0; i<dogIdArray.length; i++) {
       addTheImage(dogIdArray[i]); 
