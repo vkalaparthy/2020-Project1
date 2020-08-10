@@ -267,16 +267,11 @@ function fetchPetFinderData(token, breedType, searchState) {
 
         newCardBody.append(cardText);
     }
-
-      // newCardBody.append("<p> Primary Breed: " + response.animals[n].breeds.primary + "</p>");
-      // if (response.animals[n].breeds.secondary != null) {
-      //     newCardBody.append("<p> Secondary Breed: " + response.animals[n].breeds.secondary + "</p>");
-      // }
       
-      newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
-      newCard.append(newCardBody);
-      newCol.append(newCard);
-      $("#availList").append(newCol);
+    newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
+    newCard.append(newCardBody);
+    newCol.append(newCard);
+    $("#availList").append(newCol);
     }
   
   },
@@ -296,6 +291,10 @@ $("#dogInfo").on("click",  "#pick-me", function() {
   
   if (breedType === "Poodle (Miniature)" || breedType === "Poodle (Toy)")
     breedType = "Poodle";
+  if (breedType === "American Pit Bull Terrier")
+    breedType = "Pit Bull Terrier";
+  if (breedType === "Olde English Bulldogge")
+    breedType = "English Bulldog";
   
   getPetFinderToken(breedType, searchSt);
   location.hash = "#row-available-dogList";
