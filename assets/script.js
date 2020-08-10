@@ -140,6 +140,7 @@ $("#clear-button").on("click", function() {
 })
 
 $("#surpriseMe-button").on("click", function() {
+  event.preventDefault();
   var dogIdArray = [];
   $("#dogInfo").empty();
   $("#availList").empty();
@@ -150,8 +151,6 @@ $("#surpriseMe-button").on("click", function() {
     return;
   }
   stateName = $("#searchState option:selected").text();
-
-  event.preventDefault();
 
   $.ajax({
       url: "https://api.thedogapi.com/v1/breeds", 
