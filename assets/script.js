@@ -1,7 +1,9 @@
+// Universal variable list
 var searchSt = "";
 var stateName = "";
 var choiceOfBreedsForSupriseMe = ['German Shepherd Dog', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle (Toy)', 'Siberian Husky', 'American Bulldog', 'Labrador Retriever', 'American Pit Bull Terrier', 'Border Collie', 'Rottweiler', 'Boxer', 'Great Dane', 'Pomeranian', 'Shih Tzu', 'Cocker Spaniel', 'Australian Terrier'];
 
+// Adding on-click event to the Submit button
 $("#search-button").on("click", function() {
     event.preventDefault();
     var dogIdArray = [];
@@ -10,6 +12,7 @@ $("#search-button").on("click", function() {
     $("#availList").empty();
     searchSt = $("#searchState").val();
     
+    // Call the modal forward if the State value is empty & exit function within click event
     if(searchSt === "") {
       $('#inputModal').modal('show');
       
@@ -21,10 +24,12 @@ $("#search-button").on("click", function() {
     var breedGroup = $("#searchGroup").val();
     var temperment = $("#searchTemperament").val();
   
+    // Call modal if all other search areas are blank & exit function within click event
     if (breedType === "" && breedGroup === "" && temperment === "") {
       $('#inputModal').modal('show');
       return;
 
+      // If not, begin AJAX call with series of if/else if to handle possible search combinations
     } else {
       $.ajax({
           url: "https://api.thedogapi.com/v1/breeds", 
@@ -64,12 +69,14 @@ $("#search-button").on("click", function() {
           }
       })
       
+      // Clear location.hash before setting it again to work with every #search-button click event
       location.hash = '';    
       location.hash = "#row-dogInfo";
 
     }
   })  
 
+// Function to use an AJAX call to retrieve an img for searched dog from thedogapi
 function addTheImage(dogId) {
 
   var queryUrl =  "https://api.thedogapi.com/v1/images/search?include_breed=1&breed_id="+dogId;
@@ -79,6 +86,7 @@ function addTheImage(dogId) {
   }). then (function(imgData) {
       var dogImg = $("<img>");
       
+      // Dynamically creating a card to hold this img and giving it an id associated with the APIs dog-ID
       dogImg.addClass("card-img-top");
       dogImg.attr("src", imgData[0].url);
       var getId = "#id-" + dogId;
@@ -88,6 +96,7 @@ function addTheImage(dogId) {
 
 }
 
+// Function to use the APIs dogData to dyanamically create a card and list elements with info on available dogs
 function addDogInfoToDiv (dogData) {
     var tempData = dogData.temperament;
     var newCol = $("<div>");
@@ -137,11 +146,13 @@ function addDogInfoToDiv (dogData) {
     newCard.append(newCardBody);    
 }
 
+// Clear information-rows upon hitting Clear button
 $("#clear-button").on("click", function() {
     $("#dogInfo").empty();
     $("#availList").empty();
 })
 
+// Function to randomally select a common dog breed for a user when "Surprise Me" button is clicked
 $("#surpriseMe-button").on("click", function() {
   event.preventDefault();
   var dogIdArray = [];
@@ -149,12 +160,14 @@ $("#surpriseMe-button").on("click", function() {
   $("#availList").empty();
   searchSt = $("#searchState").val();
   
+  // Call the modal forward if the State value is empty & exit function within click event
   if(searchSt === "") {
     $('#inputModal').modal('show');
     return;
   }
   stateName = $("#searchState option:selected").text();
   
+  // AJAX call to use a randomally generated number & choiceOfBreedsForSurpriseMe to select and add a random dog
   $.ajax({
       url: "https://api.thedogapi.com/v1/breeds", 
       method: "GET",
@@ -163,7 +176,6 @@ $("#surpriseMe-button").on("click", function() {
     var randomNum = Math.floor(Math.random() * choiceOfBreedsForSupriseMe.length);
     for(var i=0; i<randomDog.length; i++) {
       if (randomDog[i].name === choiceOfBreedsForSupriseMe[randomNum]) {
-        console.log(randomDog[i].name);
         addDogInfoToDiv(randomDog[i]);
         dogIdArray.push(randomDog[i].id);
       }
@@ -172,18 +184,21 @@ $("#surpriseMe-button").on("click", function() {
         addTheImage(dogIdArray[i]);
     }
     
+    // Clear location.hash before setting it again to work with every #search-button click event
     location.hash = '';
     location.hash = "#row-dogInfo";
 
     })
 });
 
+// Function to reset the form inputs
 function resetFormInputs() {
   $("#searchType").val("");
   $("#searchGroup").val("");
   $("#searchTemperament").val("");
 }
 
+// Function to retrieve a token to access petfinder APIs information
 function getPetFinderToken(breed, searchState) {
   var settings = {
     "async": true,
@@ -197,11 +212,13 @@ function getPetFinderToken(breed, searchState) {
     "data": "{\"grant_type\": \"client_credentials\",\"client_id\": \"RbjkyobxNXfD4Ey5eFqF3pAFvWYqccdWbf1QG5heK4KqDJiYmW\",\"client_secret\": \"XYtig7eQicL760dm4x2GjsLvhzshCZ8AsETvbxlb\"}"
   }
 
+  // AJAX call using petfinder API token, as well as breed and state entered by user
   $.ajax(settings).done(function (response) {
     fetchPetFinderData(response.access_token, breed, searchState)
   });
 }
-  
+
+// Function to access dogs which are available based on user search criteria
 function fetchPetFinderData(token, breedType, searchState) {
   var queryURL = "https://api.petfinder.com/v2/animals?type=dog&breed=" + breedType +"&location=" + searchState + "&page=1";
   var settings = {
@@ -217,6 +234,7 @@ function fetchPetFinderData(token, breedType, searchState) {
   $.ajax(settings).done(function (response) {
     $("#availList").empty();
     
+    // Call modal if no dogs meet user's search criteria and exit function
     if (response.animals.length === 0) {
       $("#noResponse").empty();
       $('#noResponse').append("<p>" + breedType + " is not available in " + stateName + ". Please search again </p>");
@@ -225,10 +243,9 @@ function fetchPetFinderData(token, breedType, searchState) {
       return;
     } 
 
+    // Dynamically create cards and list elemennts with information taken from petfinder API for each available dog
     for (var n=0; n<response.animals.length; n++) {
       var state = response.animals[n].organization_id;
-      // console.log(response.animals[n]);
-      console.log(queryURL);
       var newCol = $("<div>");
       newCol.addClass("col mb-4");
       
@@ -236,6 +253,7 @@ function fetchPetFinderData(token, breedType, searchState) {
       var newCardBody = $("<div>").addClass("card-body pupBody");
       var dImg = $("<img>").addClass("img-responsive card-img-top");
       
+      // Add image to card; if no img available, use the self-created default img
       if (response.animals[n].photos.length > 0) {
         dImg.attr("src", response.animals[n].photos[0].medium);
         newCardBody.append(dImg);
@@ -277,18 +295,21 @@ function fetchPetFinderData(token, breedType, searchState) {
 
         newCardBody.append(cardText);
     }
-      
+    
+    // Create button with text to take user to petfinder's website to officially adopt the dog
     newCardBody.append("<a class='btn btn-dark'  role='button' href='" + response.animals[n].url + "' target='_blank'" + response.animals[n].url + ">Pick me! Pick me!</a>");
     newCard.append(newCardBody);
     newCol.append(newCard);
     $("#availList").append(newCol);
     }
     
+    // Clear location.hash before setting it again to work with every #search-button click event
     location.hash = '';
     location.hash = "#row-available-dogList";
 
   },
 
+    // Call modal if no dogs meet user's search criteria and exit function
     $.ajax(settings).error(function() {
       $("#noResponse").empty();
         $('#noResponse').append("<p>" + breedType + " is not available in " + stateName + ". Please search again </p>");
@@ -297,7 +318,8 @@ function fetchPetFinderData(token, breedType, searchState) {
     })
   );
 }
-  
+
+// Function to prevent errors between both APIs calling the same breed by different names so that results show
 $("#dogInfo").on("click",  "#pick-me", function() {
   var button = $(event.target);
   var breedType = button.attr("data-breed-name");
