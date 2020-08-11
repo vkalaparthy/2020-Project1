@@ -89,4 +89,4 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 
 ## Deployed Application Link
 
-* Link To Application: https://vkalaparthy.github.io/2020-Project1/
+* Link To Application: [Dream Dog, from Happy Dog Days, Inc.](https://vkalaparthy.github.io/2020-Project1/)
