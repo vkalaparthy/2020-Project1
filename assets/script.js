@@ -22,10 +22,10 @@ $("#search-button").on("click", function() {
     stateName = $("#searchState option:selected").text();
     var breedType = $("#searchType").val();
     var breedGroup = $("#searchGroup").val();
-    var temperment = $("#searchTemperament").val();
+    var temparment = $("#searchTemperament").val();
   
     // Call modal if all other search areas are blank & exit function within click event
-    if (breedType === "" && breedGroup === "" && temperment === "") {
+    if (breedType === "" && breedGroup === "" && temparment === "") {
       $('#inputModal').modal('show');
       return;
 
@@ -43,9 +43,9 @@ $("#search-button").on("click", function() {
                   addDogInfoToDiv(dogData[i]);
                   dogIdArray.push(dogData[i].id);
               } 
-            } else if (breedGroup != "" && temperment != "") {
+            } else if (breedGroup != "" && temparment != "") {
               if (tempData !== undefined) {
-                if ((breedGroup === dogData[i].breed_group) && (tempData.indexOf(temperment) >= 0) ) {
+                if ((breedGroup === dogData[i].breed_group) && (tempData.indexOf(temparment) >= 0) ) {
                   addDogInfoToDiv(dogData[i]);
                   dogIdArray.push(dogData[i].id);
                 }
@@ -56,8 +56,8 @@ $("#search-button").on("click", function() {
                   addDogInfoToDiv(dogData[i]);
                   dogIdArray.push(dogData[i].id);
                 }
-              } else if (temperment != "") {
-                if (tempData != undefined && tempData.indexOf(temperment) >= 0) {
+              } else if (temparment != "") {
+                if (tempData != undefined && tempData.indexOf(temparment) >= 0) {
                   addDogInfoToDiv(dogData[i]);
                   dogIdArray.push(dogData[i].id);
                 }
