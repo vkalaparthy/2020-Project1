@@ -7,6 +7,8 @@ Find your dream dog in your state or discover a surprise dog in your state using
 * [Technologies](#technologies)
 * [Features](#features)
 * [How to Use](#how-to-use)
+* [Application Demo] (https://github.com/vkalaparthy/2020-Project1#application-demo)
+* [Deployed Application Link] (#deployed-application-link)
 
 ## General Info
 
@@ -71,6 +73,7 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 * If the user would like to clear their selections or begin a new search, they may choose the Clear button to clear the search results and search fields.
 
 ## Application Demo
+* Deployed
 
 * Empty Submit Modal, Submit with State and Breed Type, & Back To Search functionality:
 
@@ -84,3 +87,6 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 
     ![Dream Dog! (6)](https://user-images.githubusercontent.com/65187093/89840560-87249b80-db3e-11ea-96ae-662661627dde.gif)
 
+## Deployed Application Link
+
+* Link To Application: https://vkalaparthy.github.io/2020-Project1/
