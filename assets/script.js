@@ -1,6 +1,6 @@
 var searchSt = "";
 var stateName = "";
-var choiceOfBreedsForSupriseMe = ['German Shepherd', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle', 'Siberian Husky', 'American Bulldog', 'Labrador Retriever', 'American Pit Bull Terrier'];
+var choiceOfBreedsForSupriseMe = ['German Shepherd Dog', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle (Toy)', 'Siberian Husky', 'American Bulldog', 'Labrador Retriever', 'American Pit Bull Terrier', 'Border Collie', 'Rottweiler', 'Boxer', 'Great Dane', 'Pomeranian', 'Shih Tzu', 'Cocker Spaniel', 'Australian Terrier'];
 
 $("#search-button").on("click", function() {
     event.preventDefault();
@@ -62,8 +62,11 @@ $("#search-button").on("click", function() {
           for (var i=0; i<dogIdArray.length; i++) {
               addTheImage(dogIdArray[i]);
           }
-          location.hash = "#row-dogInfo";
       })
+      
+      location.hash = '';    
+      location.hash = "#row-dogInfo";
+
     }
   })  
 
@@ -168,8 +171,11 @@ $("#surpriseMe-button").on("click", function() {
     for (var i=0; i<dogIdArray.length; i++) {
         addTheImage(dogIdArray[i]);
     }
+    
+    location.hash = '';
+    location.hash = "#row-dogInfo";
+
     })
-  location.hash = "#row-dogInfo";
 });
 
 function resetFormInputs() {
@@ -197,7 +203,7 @@ function getPetFinderToken(breed, searchState) {
 }
   
 function fetchPetFinderData(token, breedType, searchState) {
-  var queryURL = "https://api.petfinder.com/v2/animals?type=dog&breed=" + breedType +"&location=" + searchState + "&page=2";
+  var queryURL = "https://api.petfinder.com/v2/animals?type=dog&breed=" + breedType +"&location=" + searchState + "&page=1";
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -277,7 +283,10 @@ function fetchPetFinderData(token, breedType, searchState) {
     newCol.append(newCard);
     $("#availList").append(newCol);
     }
-  
+    
+    location.hash = '';
+    location.hash = "#row-available-dogList";
+
   },
 
     $.ajax(settings).error(function() {
@@ -300,5 +309,4 @@ $("#dogInfo").on("click",  "#pick-me", function() {
   if (breedType === "Olde English Bulldogge")
     breedType = "English Bulldog";
   getPetFinderToken(breedType, searchSt);
-  location.hash = "#row-available-dogList";
 });
