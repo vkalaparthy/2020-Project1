@@ -302,7 +302,7 @@ function fetchPetFinderData(token, breedType, searchState) {
 
   },
 
-    // Call modal if no dogs meet user's search criteria and exit function
+    // Call modal if we receive an Exception from API call, for now the exception is treated as no response
     $.ajax(settings).error(function() {
       $("#noResponse").empty();
         $('#noResponse').append("<p>" + breedType + " is not available in " + stateName + ". Please search again </p>");
