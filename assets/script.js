@@ -1,4 +1,4 @@
-// Universal variable list
+// Global variable list
 var searchSt = "";
 var stateName = "";
 var choiceOfBreedsForSupriseMe = ['German Shepherd Dog', 'Beagle', 'Boston Terrier', 'Golden Retriever', 'Australian Shepherd', 'Poodle (Toy)', 'Siberian Husky', 'American Bulldog', 'Labrador Retriever', 'American Pit Bull Terrier', 'Border Collie', 'Rottweiler', 'Boxer', 'Great Dane', 'Pomeranian', 'Shih Tzu', 'Cocker Spaniel', 'Australian Terrier'];
@@ -183,20 +183,13 @@ $("#surpriseMe-button").on("click", function() {
     for (var i=0; i<dogIdArray.length; i++) {
         addTheImage(dogIdArray[i]);
     }
-    
+
     // Clear location.hash before setting it again to work with every #search-button click event
     location.hash = '';
     location.hash = "#row-dogInfo";
 
     })
 });
-
-// Function to reset the form inputs
-function resetFormInputs() {
-  $("#searchType").val("");
-  $("#searchGroup").val("");
-  $("#searchTemperament").val("");
-}
 
 // Function to retrieve a token to access petfinder APIs information
 function getPetFinderToken(breed, searchState) {
