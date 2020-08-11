@@ -7,8 +7,8 @@ Find your dream dog in your state or discover a surprise dog in your state using
 * [Technologies](#technologies)
 * [Features](#features)
 * [How to Use](#how-to-use)
-* [Application Demo] (https://github.com/vkalaparthy/2020-Project1#application-demo)
-* [Deployed Application Link] (#deployed-application-link)
+* [Application Demo](#application-demo)
+* [Deployed Application Link](#deployed-application-link)
 
 ## General Info
 
