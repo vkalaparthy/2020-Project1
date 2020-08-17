@@ -9,6 +9,7 @@ Find your dream dog in your state or discover a surprise dog in your state using
 * [How to Use](#how-to-use)
 * [Application Demo](#application-demo)
 * [Deployed Application Link](#deployed-application-link)
+* [Contact Us](#contact-us)
 
 ## General Info
 
@@ -90,3 +91,10 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 ## Deployed Application Link
 
 * Link To Application: [Dream Dog, from Happy Dog Days, Inc.](https://vkalaparthy.github.io/2020-Project1/)
+
+## Contact Us
+
+* Jarrod Bataille
+   
+   * E-mail: jtbataille@gmail.com
+   * Portfolio: https://jtbataille.github.io/
