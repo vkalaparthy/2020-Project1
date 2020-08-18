@@ -107,7 +107,7 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 * Vani Kalaparthy
    
    * E-mail: kalaparthy.vani@gmail.com
-   * Portfolio: https://vkalaparthy.github.io/
+   * GitHub: https://github.com/vkalaparthy
    
 * Curran Miller
    
