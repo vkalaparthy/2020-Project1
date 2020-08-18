@@ -97,11 +97,12 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 * Jarrod Bataille
    
    * E-mail: jtbataille@gmail.com
-   * Portfolio: https://jtbataille.github.io/
+   * GitHub: https://jtbataille.github.io/
    
 * Kasey Jones
    
    * E-mail: joneskm72@gmail.com
+   * GitHub: https://github.com/joneskm72
    
 * Vani Kalaparthy
    
