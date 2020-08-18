@@ -98,18 +98,22 @@ An application that runs in a browser and features dynamically updated HTML, CSS
    
    * E-mail: jtbataille@gmail.com
    * GitHub: https://jtbataille.github.io/
+   * Portfolio: https://jtbataille.github.io/
    
 * Kasey Jones
    
    * E-mail: joneskm72@gmail.com
    * GitHub: https://github.com/joneskm72
+   * Portfolio: https://joneskm72.github.io/portfolio/
    
 * Vani Kalaparthy
    
    * E-mail: kalaparthy.vani@gmail.com
    * GitHub: https://github.com/vkalaparthy
+   * Portfolio: https://vkalaparthy.github.io/
    
 * Curran Miller
    
    * E-mail: curransmiller@gmail.com
    * GitHub: https://github.com/CurranSMiller
+   * Portfolio: https://github.com/CurranSMiller/CurranSMiller.github.io
