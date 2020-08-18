@@ -102,7 +102,6 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 * Kasey Jones
    
    * E-mail: joneskm72@gmail.com
-   * Portfolio: https://joneskm72.github.io/
    
 * Vani Kalaparthy
    
@@ -112,4 +111,3 @@ An application that runs in a browser and features dynamically updated HTML, CSS
 * Curran Miller
    
    * E-mail: curransmiller@gmail.com
-   * Portfolio: https://CurranSMiller.github.io/
