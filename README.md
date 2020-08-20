@@ -116,4 +116,4 @@ An application that runs in a browser and features dynamically updated HTML, CSS
    
    * E-mail: curransmiller@gmail.com
    * GitHub: https://github.com/CurranSMiller
-   * Portfolio: https://github.com/CurranSMiller/CurranSMiller.github.io
+   * Portfolio: https://curransmiller.github.io/
